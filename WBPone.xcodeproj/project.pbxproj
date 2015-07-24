@@ -18,6 +18,12 @@
 		8713DBA71B621776008BDEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE577F1B61DB5700F13039 /* SystemConfiguration.framework */; };
 		8713DBA81B62177F008BDEA3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE57811B61DB6300F13039 /* libz.dylib */; };
 		8713DBA91B621788008BDEA3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE57831B61DB7200F13039 /* libsqlite3.dylib */; };
+		877AA9641B622861006A017E /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9631B622861006A017E /* DKCircleButton.m */; };
+		877AA96B1B623574006A017E /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9671B623574006A017E /* CustomerInfo.swift */; };
+		877AA96C1B623574006A017E /* DealInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9681B623574006A017E /* DealInfo.swift */; };
+		877AA96D1B623574006A017E /* GoodsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9691B623574006A017E /* GoodsInfo.swift */; };
+		877AA96E1B623574006A017E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA96A1B623574006A017E /* UserInfo.swift */; };
+		877AA9701B6238AD006A017E /* InterestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA96F1B6238AD006A017E /* InterestInfo.swift */; };
 		87BE57391B61D21700F13039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE57381B61D21700F13039 /* AppDelegate.swift */; };
 		87BE573B1B61D21700F13039 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573A1B61D21700F13039 /* HomeViewController.swift */; };
 		87BE573D1B61D21700F13039 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573C1B61D21700F13039 /* SearchViewController.swift */; };
@@ -45,6 +51,13 @@
 
 /* Begin PBXFileReference section */
 		8713DB531B620D4D008BDEA3 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		877AA9621B622861006A017E /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
+		877AA9631B622861006A017E /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
+		877AA9671B623574006A017E /* CustomerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
+		877AA9681B623574006A017E /* DealInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealInfo.swift; sourceTree = "<group>"; };
+		877AA9691B623574006A017E /* GoodsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsInfo.swift; sourceTree = "<group>"; };
+		877AA96A1B623574006A017E /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		877AA96F1B6238AD006A017E /* InterestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestInfo.swift; sourceTree = "<group>"; };
 		87BE57331B61D21700F13039 /* WBPone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBPone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BE57371B61D21700F13039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BE57381B61D21700F13039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,13 +119,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		877AA9611B622861006A017E /* DKCircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				877AA9621B622861006A017E /* DKCircleButton.h */,
+				877AA9631B622861006A017E /* DKCircleButton.m */,
+			);
+			path = DKCircleButton;
+			sourceTree = "<group>";
+		};
+		877AA9651B623537006A017E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				87BE57681B61D8BB00F13039 /* Login/Register */,
+				87BE573A1B61D21700F13039 /* HomeViewController.swift */,
+				87BE573C1B61D21700F13039 /* SearchViewController.swift */,
+				8713DB531B620D4D008BDEA3 /* MyViewController.swift */,
+				87BE57691B61D91C00F13039 /* UIViewControllerExtension.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		877AA9661B62354C006A017E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				877AA9671B623574006A017E /* CustomerInfo.swift */,
+				877AA9691B623574006A017E /* GoodsInfo.swift */,
+				877AA96A1B623574006A017E /* UserInfo.swift */,
+				877AA9681B623574006A017E /* DealInfo.swift */,
+				877AA96F1B6238AD006A017E /* InterestInfo.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		87BE572A1B61D21700F13039 = {
 			isa = PBXGroup;
 			children = (
 				87BE57351B61D21700F13039 /* WBPone */,
 				87BE574D1B61D21700F13039 /* WBPoneTests */,
 				87BE57341B61D21700F13039 /* Products */,
-				87BE57671B61D89B00F13039 /* frameworks */,
+				87BE57671B61D89B00F13039 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,13 +174,11 @@
 		87BE57351B61D21700F13039 /* WBPone */ = {
 			isa = PBXGroup;
 			children = (
+				877AA9611B622861006A017E /* DKCircleButton */,
 				87BE57381B61D21700F13039 /* AppDelegate.swift */,
 				87BE573E1B61D21700F13039 /* Main.storyboard */,
-				87BE57681B61D8BB00F13039 /* Login/Register */,
-				87BE573A1B61D21700F13039 /* HomeViewController.swift */,
-				87BE573C1B61D21700F13039 /* SearchViewController.swift */,
-				8713DB531B620D4D008BDEA3 /* MyViewController.swift */,
-				87BE57691B61D91C00F13039 /* UIViewControllerExtension.swift */,
+				877AA9661B62354C006A017E /* Model */,
+				877AA9651B623537006A017E /* Controller */,
 				87BE57361B61D21700F13039 /* Supporting Files */,
 			);
 			path = WBPone;
@@ -168,7 +212,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		87BE57671B61D89B00F13039 /* frameworks */ = {
+		87BE57671B61D89B00F13039 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				87BE576B1B61D9CF00F13039 /* Bolts.framework */,
@@ -185,7 +229,7 @@
 				87BE57731B61DB1B00F13039 /* CFNetwork.framework */,
 				87BE57711B61DB0C00F13039 /* AudioToolbox.framework */,
 			);
-			name = frameworks;
+			name = Frameworks;
 			path = WBPone;
 			sourceTree = "<group>";
 		};
@@ -298,13 +342,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877AA9641B622861006A017E /* DKCircleButton.m in Sources */,
+				877AA96B1B623574006A017E /* CustomerInfo.swift in Sources */,
 				87BE575C1B61D41000F13039 /* LoginViewController.swift in Sources */,
 				87BE575D1B61D41000F13039 /* RegisterViewController.swift in Sources */,
+				877AA96E1B623574006A017E /* UserInfo.swift in Sources */,
+				877AA96D1B623574006A017E /* GoodsInfo.swift in Sources */,
 				87BE576A1B61D91C00F13039 /* UIViewControllerExtension.swift in Sources */,
 				8713DB541B620D4D008BDEA3 /* MyViewController.swift in Sources */,
 				87BE573D1B61D21700F13039 /* SearchViewController.swift in Sources */,
+				877AA9701B6238AD006A017E /* InterestInfo.swift in Sources */,
 				87BE57391B61D21700F13039 /* AppDelegate.swift in Sources */,
 				87BE573B1B61D21700F13039 /* HomeViewController.swift in Sources */,
+				877AA96C1B623574006A017E /* DealInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

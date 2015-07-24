@@ -10,17 +10,97 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let ToDiandangSegue = "ToDiandangSegue"
+    let ToShudangSegue = "ToShudangSegue"
+    let ToXudangSegue = "ToXudangSegue"
+    let ToJuedangSegue = "ToJuedangSegue"
+    
+    var diandangBtn = DKCircleButton()
+    var shudangBtn = DKCircleButton()
+    var xudangBtn = DKCircleButton()
+    var juedangBtn = DKCircleButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.initTabBar()
-//        let bu = AmazingButton()
-//        let a = AmaButtonTypeFodder
-//        let button = AmazingButton(frame: CGRectMake(100, 100, 100, 100), color: UIColor.redColor(), type: AmaButtonTypeUser)
+
         
-//        self.view.addSubview(button)
+        
+        setupUIElements()
+        resetContentFrame()
+        
+        
+    }
+    
+    func setupUIElements() {
+//        self.view.backgroundColor = UIColor.orangeColor()
+
+
+
+        diandangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
+        diandangBtn.setTitle("你好", forState: UIControlState.Normal)
+        diandangBtn.addTarget(self, action: "diandangClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(diandangBtn)
+        
+        shudangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
+        shudangBtn.setTitle("你好", forState: UIControlState.Normal)
+        shudangBtn.addTarget(self, action: "shudangClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(shudangBtn)
+        
+        xudangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
+        xudangBtn.setTitle("你好", forState: UIControlState.Normal)
+        xudangBtn.addTarget(self, action: "xudangClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(xudangBtn)
+        
+        juedangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
+        juedangBtn.setTitle("你好", forState: UIControlState.Normal)
+        juedangBtn.addTarget(self, action: "juedangClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(juedangBtn)
+    }
+    
+    // MARK: Update Frame
+    func resetContentFrame() {
+        let rect = UIScreen.mainScreen().bounds
+        let radius:CGFloat = 60
+        let distance = rect.width/4
+        
+        diandangBtn.frame = CGRectMake(
+            rect.width/2 - distance - radius,
+            rect.height/2 - distance - radius,
+            2 * radius,
+            2 * radius)
+        shudangBtn.frame = CGRectMake(
+            rect.width/2 + distance - radius,
+            rect.height/2 - distance - radius,
+            2 * radius,
+            2 * radius)
+        xudangBtn.frame = CGRectMake(
+            rect.width/2 - distance - radius,
+            rect.height/2 + distance - radius,
+            2 * radius,
+            2 * radius)
+        juedangBtn.frame = CGRectMake(
+            rect.width/2 + distance - radius,
+            rect.height/2 + distance - radius,
+            2 * radius,
+            2 * radius)
+        
+        
     }
 
+    
+    func diandangClicked() {
+        self.performSegueWithIdentifier(ToDiandangSegue, sender: nil)
+    }
+    func shudangClicked() {
+        self.performSegueWithIdentifier(ToShudangSegue, sender: nil)
+    }
+    func xudangClicked() {
+        self.performSegueWithIdentifier(ToXudangSegue, sender: nil)
+    }
+    func juedangClicked() {
+        self.performSegueWithIdentifier(ToJuedangSegue, sender: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
