@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8713DBB21B621BF4008BDEA3"
+               BlueprintIdentifier = "87BE57321B61D21700F13039"
                BuildableName = "WBPone.app"
                BlueprintName = "WBPone"
                ReferencedContainer = "container:WBPone.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8713DBC91B621BF4008BDEA3"
+               BlueprintIdentifier = "87BE57491B61D21700F13039"
                BuildableName = "WBPoneTests.xctest"
                BlueprintName = "WBPoneTests"
                ReferencedContainer = "container:WBPone.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8713DBC91B621BF4008BDEA3"
+               BlueprintIdentifier = "87BE57491B61D21700F13039"
                BuildableName = "WBPoneTests.xctest"
                BlueprintName = "WBPoneTests"
                ReferencedContainer = "container:WBPone.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8713DBB21B621BF4008BDEA3"
+            BlueprintIdentifier = "87BE57321B61D21700F13039"
             BuildableName = "WBPone.app"
             BlueprintName = "WBPone"
             ReferencedContainer = "container:WBPone.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8713DBB21B621BF4008BDEA3"
+            BlueprintIdentifier = "87BE57321B61D21700F13039"
             BuildableName = "WBPone.app"
             BlueprintName = "WBPone"
             ReferencedContainer = "container:WBPone.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8713DBB21B621BF4008BDEA3"
+            BlueprintIdentifier = "87BE57321B61D21700F13039"
             BuildableName = "WBPone.app"
             BlueprintName = "WBPone"
             ReferencedContainer = "container:WBPone.xcodeproj">
