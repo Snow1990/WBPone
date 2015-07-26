@@ -8,17 +8,29 @@
 
 import UIKit
 
-class MyViewController: UIViewController {
+class MyViewController: UIViewController, AccountDelegate {
 
     @IBAction func LogoffClick(sender: UIButton) {
+        PFUser.logOut()
         self.navigationController?.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
-//        self.dismissViewControllerAnimated(true, completion: nil)
 
     }
+    // MARK:- Properties
+    let ToAddMoneySegue = "ToAddMoneySegue"
+    // MARK:- UI Elements
+    var userNameView = LabelLabelView()
+    var userAccountView = LabelLabelBtnView()
+    // MARK:- Init
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.initTabBar()
+        setupUIElements()
+        resetContentFrame()
+    }
+    override func viewDidAppear(animated: Bool) {
+        userAccountView.value = UserInfo.currentUser()!["account"] as? Double
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +49,46 @@ class MyViewController: UIViewController {
         self.navigationController?.tabBarItem.selectedImage = UIImage(named: "tab_icon3_pressed")
     }
     
+    
+    func setupUIElements() {
+        self.view.backgroundColor = UIColor.whiteColor()
+        self.navigationItem.title = "我的账户"
+        
+        userNameView.key = "用户名："
+        userNameView.value = UserInfo.currentUser()!.username
+        self.view.addSubview(userNameView)
+        
+        userAccountView.key = "账户余额："
+        userAccountView.value = UserInfo.currentUser()!["account"] as? Double
+        userAccountView.delegate = self
+        self.view.addSubview(userAccountView)
+        
+        
+        
+        
+    }
+    
+    // MARK: Update Frame
+    func resetContentFrame() {
+        
+        userNameView.frame = CGRectMake(
+            0,
+            100,
+            Constants.Rect.width,
+            35)
+        
+        userAccountView.frame = CGRectMake(
+            0,
+            135,
+            Constants.Rect.width,
+            35)
+        
+        
+    }
+    // Account Delegate
+    func addBtnClick() {
+        self.performSegueWithIdentifier(ToAddMoneySegue, sender: nil)
+    }
     /*
     // MARK: - Navigation
 

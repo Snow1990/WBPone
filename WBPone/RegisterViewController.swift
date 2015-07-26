@@ -26,11 +26,12 @@ class RegisterViewController: UIViewController {
     // MARK: - Actions
     @IBAction func signUpPressed(sender: AnyObject) {
         //1
-        let user = PFUser()
+        let user = UserInfo()
 
         //2
         user.username = userTextField.text
         user.password = passwordTextField.text
+        user.account = 0
         
         //3
         user.signUpInBackgroundWithBlock { succeeded, error in

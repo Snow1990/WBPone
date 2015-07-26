@@ -8,15 +8,50 @@
 
 import Foundation
 
-class DealInfo {
-    var id: String!
+class DealInfo: PFObject {
+    @NSManaged var dealId: Int
+    @NSManaged var user: PFUser!
+    @NSManaged var customer: CustomerInfo!
+    @NSManaged var goods: GoodsInfo!
+    // 利润
+    @NSManaged var profit: Double
+    // 交易完成
+    @NSManaged var isDone: Bool
+    // 绝当
+    @NSManaged var isDead: Bool
     
-    var user: UserInfo!
-    var customer: CustomerInfo!
-    var goods: GoodsInfo!
+    override init() {
+        super.init()
+    }
+
+    override class func query() -> PFQuery? {
+        //1
+        let query = PFQuery(className: DealInfo.parseClassName())
+        //2
+        query.includeKey("user")
+        query.includeKey("customer")
+        query.includeKey("goods")
+        //3
+        query.orderByDescending("createdAt")
+        
+        return query
+    }
     
-    var interest = [InterestInfo]()
-    var isDone = false
-    var idDead = false
+}
+
+extension DealInfo: PFSubclassing {
     
+    // Table view delegate methods here
+    //1
+    class func parseClassName() -> String {
+        return "DealInfo"
+    }
+    
+    //2
+    override class func initialize() {
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
 }

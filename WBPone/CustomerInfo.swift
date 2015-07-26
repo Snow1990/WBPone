@@ -8,9 +8,36 @@
 
 import Foundation
 
-class CustomerInfo {
-    var id: String!
-    var name: String?
-    var cardNo: String?
-    var telephone: String?
+class CustomerInfo: PFObject {
+//    @NSManaged var id: String!
+    @NSManaged var name: String?
+    @NSManaged var cardNo: String?
+    @NSManaged var telephone: String?
+    
+    override init() {
+        super.init()
+    }
+//    init(id: String) {
+//        super.init()
+//        self.id = id
+//    }
+    
+   
+}
+
+extension CustomerInfo: PFSubclassing {
+    
+    // Table view delegate methods here
+    //1
+    class func parseClassName() -> String {
+        return "CustomerInfo"
+    }
+    
+    //2
+    override class func initialize() {
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
 }

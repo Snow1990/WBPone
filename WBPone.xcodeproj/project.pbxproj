@@ -24,6 +24,15 @@
 		877AA96D1B623574006A017E /* GoodsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9691B623574006A017E /* GoodsInfo.swift */; };
 		877AA96E1B623574006A017E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA96A1B623574006A017E /* UserInfo.swift */; };
 		877AA9701B6238AD006A017E /* InterestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA96F1B6238AD006A017E /* InterestInfo.swift */; };
+		877AA9751B6398A8006A017E /* DiandangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9741B6398A8006A017E /* DiandangViewController.swift */; };
+		877AA9771B639BA7006A017E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9761B639BA7006A017E /* Constants.swift */; };
+		877AA9801B63A128006A017E /* LabelTFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA97F1B63A128006A017E /* LabelTFView.swift */; };
+		877AA9821B63E1BD006A017E /* DealKeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9811B63E1BD006A017E /* DealKeyValueView.swift */; };
+		877AA9841B63E4BE006A017E /* TypeKeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9831B63E4BE006A017E /* TypeKeyValueView.swift */; };
+		877AA9951B63FAFD006A017E /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9941B63FAFD006A017E /* ZHPickView.m */; };
+		877AA9981B64C165006A017E /* LabelLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9971B64C165006A017E /* LabelLabelView.swift */; };
+		877AA99A1B64D6E1006A017E /* LabelLabelBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9991B64D6E1006A017E /* LabelLabelBtnView.swift */; };
+		877AA99E1B64DDAB006A017E /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA99D1B64DDAB006A017E /* AddMoneyViewController.swift */; };
 		87BE57391B61D21700F13039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE57381B61D21700F13039 /* AppDelegate.swift */; };
 		87BE573B1B61D21700F13039 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573A1B61D21700F13039 /* HomeViewController.swift */; };
 		87BE573D1B61D21700F13039 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573C1B61D21700F13039 /* SearchViewController.swift */; };
@@ -58,6 +67,16 @@
 		877AA9691B623574006A017E /* GoodsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsInfo.swift; sourceTree = "<group>"; };
 		877AA96A1B623574006A017E /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		877AA96F1B6238AD006A017E /* InterestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestInfo.swift; sourceTree = "<group>"; };
+		877AA9741B6398A8006A017E /* DiandangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiandangViewController.swift; sourceTree = "<group>"; };
+		877AA9761B639BA7006A017E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		877AA97F1B63A128006A017E /* LabelTFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTFView.swift; sourceTree = "<group>"; };
+		877AA9811B63E1BD006A017E /* DealKeyValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealKeyValueView.swift; sourceTree = "<group>"; };
+		877AA9831B63E4BE006A017E /* TypeKeyValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeKeyValueView.swift; sourceTree = "<group>"; };
+		877AA9931B63FAFD006A017E /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHPickView.h; path = DKCircleButton/ZHPickView.h; sourceTree = "<group>"; };
+		877AA9941B63FAFD006A017E /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHPickView.m; path = DKCircleButton/ZHPickView.m; sourceTree = "<group>"; };
+		877AA9971B64C165006A017E /* LabelLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelLabelView.swift; sourceTree = "<group>"; };
+		877AA9991B64D6E1006A017E /* LabelLabelBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelLabelBtnView.swift; sourceTree = "<group>"; };
+		877AA99D1B64DDAB006A017E /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMoneyViewController.swift; path = ../AddMoneyViewController.swift; sourceTree = "<group>"; };
 		87BE57331B61D21700F13039 /* WBPone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBPone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BE57371B61D21700F13039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BE57381B61D21700F13039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,9 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				87BE57681B61D8BB00F13039 /* Login/Register */,
-				87BE573A1B61D21700F13039 /* HomeViewController.swift */,
-				87BE573C1B61D21700F13039 /* SearchViewController.swift */,
-				8713DB531B620D4D008BDEA3 /* MyViewController.swift */,
+				877AA9711B63984E006A017E /* HomePage */,
+				877AA9721B639867006A017E /* SearchPage */,
+				877AA9731B639874006A017E /* MyPage */,
 				87BE57691B61D91C00F13039 /* UIViewControllerExtension.swift */,
 			);
 			name = Controller;
@@ -145,11 +164,51 @@
 			children = (
 				877AA9671B623574006A017E /* CustomerInfo.swift */,
 				877AA9691B623574006A017E /* GoodsInfo.swift */,
-				877AA96A1B623574006A017E /* UserInfo.swift */,
 				877AA9681B623574006A017E /* DealInfo.swift */,
+				877AA96A1B623574006A017E /* UserInfo.swift */,
 				877AA96F1B6238AD006A017E /* InterestInfo.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		877AA9711B63984E006A017E /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				87BE573A1B61D21700F13039 /* HomeViewController.swift */,
+				877AA9741B6398A8006A017E /* DiandangViewController.swift */,
+				877AA97F1B63A128006A017E /* LabelTFView.swift */,
+				877AA9811B63E1BD006A017E /* DealKeyValueView.swift */,
+				877AA9831B63E4BE006A017E /* TypeKeyValueView.swift */,
+			);
+			name = HomePage;
+			sourceTree = "<group>";
+		};
+		877AA9721B639867006A017E /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				87BE573C1B61D21700F13039 /* SearchViewController.swift */,
+			);
+			name = SearchPage;
+			sourceTree = "<group>";
+		};
+		877AA9731B639874006A017E /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				8713DB531B620D4D008BDEA3 /* MyViewController.swift */,
+				877AA9971B64C165006A017E /* LabelLabelView.swift */,
+				877AA9991B64D6E1006A017E /* LabelLabelBtnView.swift */,
+				877AA99D1B64DDAB006A017E /* AddMoneyViewController.swift */,
+			);
+			name = MyPage;
+			sourceTree = "<group>";
+		};
+		877AA9961B640769006A017E /* ZHPickView */ = {
+			isa = PBXGroup;
+			children = (
+				877AA9931B63FAFD006A017E /* ZHPickView.h */,
+				877AA9941B63FAFD006A017E /* ZHPickView.m */,
+			);
+			name = ZHPickView;
 			sourceTree = "<group>";
 		};
 		87BE572A1B61D21700F13039 = {
@@ -174,9 +233,11 @@
 		87BE57351B61D21700F13039 /* WBPone */ = {
 			isa = PBXGroup;
 			children = (
+				877AA9961B640769006A017E /* ZHPickView */,
 				877AA9611B622861006A017E /* DKCircleButton */,
 				87BE57381B61D21700F13039 /* AppDelegate.swift */,
 				87BE573E1B61D21700F13039 /* Main.storyboard */,
+				877AA9761B639BA7006A017E /* Constants.swift */,
 				877AA9661B62354C006A017E /* Model */,
 				877AA9651B623537006A017E /* Controller */,
 				87BE57361B61D21700F13039 /* Supporting Files */,
@@ -342,18 +403,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877AA9801B63A128006A017E /* LabelTFView.swift in Sources */,
 				877AA9641B622861006A017E /* DKCircleButton.m in Sources */,
 				877AA96B1B623574006A017E /* CustomerInfo.swift in Sources */,
 				87BE575C1B61D41000F13039 /* LoginViewController.swift in Sources */,
 				87BE575D1B61D41000F13039 /* RegisterViewController.swift in Sources */,
+				877AA99E1B64DDAB006A017E /* AddMoneyViewController.swift in Sources */,
 				877AA96E1B623574006A017E /* UserInfo.swift in Sources */,
+				877AA9771B639BA7006A017E /* Constants.swift in Sources */,
 				877AA96D1B623574006A017E /* GoodsInfo.swift in Sources */,
 				87BE576A1B61D91C00F13039 /* UIViewControllerExtension.swift in Sources */,
 				8713DB541B620D4D008BDEA3 /* MyViewController.swift in Sources */,
+				877AA9951B63FAFD006A017E /* ZHPickView.m in Sources */,
+				877AA99A1B64D6E1006A017E /* LabelLabelBtnView.swift in Sources */,
 				87BE573D1B61D21700F13039 /* SearchViewController.swift in Sources */,
 				877AA9701B6238AD006A017E /* InterestInfo.swift in Sources */,
 				87BE57391B61D21700F13039 /* AppDelegate.swift in Sources */,
+				877AA9981B64C165006A017E /* LabelLabelView.swift in Sources */,
+				877AA9821B63E1BD006A017E /* DealKeyValueView.swift in Sources */,
 				87BE573B1B61D21700F13039 /* HomeViewController.swift in Sources */,
+				877AA9841B63E4BE006A017E /* TypeKeyValueView.swift in Sources */,
+				877AA9751B6398A8006A017E /* DiandangViewController.swift in Sources */,
 				877AA96C1B623574006A017E /* DealInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

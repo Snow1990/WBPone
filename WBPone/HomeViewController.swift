@@ -24,6 +24,45 @@ class HomeViewController: UIViewController {
         
         self.initTabBar()
 
+//        let player = PFObject(className: "Player")
+//        player.setObject("Snow", forKey: "Name")
+//        player.setObject(100, forKey: "Score")
+//        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
+//            if succeeded {
+//                println("Object Uploaded")
+//            } else {
+//                println("Error: \(error) \(error!.userInfo!)")
+//            }
+//        }
+//        player.deleteInBackgroundWithBlock { (succeeded, error) -> Void in
+//            if succeeded {
+//                println("Object deleted")
+//            } else {
+//                println("Error: \(error) \(error!.userInfo!)")
+//            }
+//        }
+//        func removeObject(object: AnyObject, forKey key: String)
+
+        
+//        let query = PFQuery(className: "Player")
+//        query.whereKey("Name", equalTo:"Snow")
+//        query.findObjectsInBackgroundWithBlock {
+//            (objects: [AnyObject]?, error: NSError?) -> Void in
+//            
+//            if error == nil {
+//                // The find succeeded.
+//                println("Successfully retrieved \(objects!.count) scores.")
+//                // Do something with the found objects
+//                if let objects = objects as? [PFObject] {
+//                    for object in objects {
+//                        println(object.objectId)
+//                    }
+//                }
+//            } else {
+//                // Log details of the failure
+//                println("Error: \(error!) \(error!.userInfo!)")
+//            }
+//        }
         
         
         setupUIElements()
@@ -38,22 +77,22 @@ class HomeViewController: UIViewController {
 
 
         diandangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
-        diandangBtn.setTitle("你好", forState: UIControlState.Normal)
+        diandangBtn.setTitle("典当", forState: UIControlState.Normal)
         diandangBtn.addTarget(self, action: "diandangClicked", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(diandangBtn)
         
         shudangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
-        shudangBtn.setTitle("你好", forState: UIControlState.Normal)
+        shudangBtn.setTitle("赎当", forState: UIControlState.Normal)
         shudangBtn.addTarget(self, action: "shudangClicked", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(shudangBtn)
         
         xudangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
-        xudangBtn.setTitle("你好", forState: UIControlState.Normal)
+        xudangBtn.setTitle("续当", forState: UIControlState.Normal)
         xudangBtn.addTarget(self, action: "xudangClicked", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(xudangBtn)
         
         juedangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
-        juedangBtn.setTitle("你好", forState: UIControlState.Normal)
+        juedangBtn.setTitle("绝当", forState: UIControlState.Normal)
         juedangBtn.addTarget(self, action: "juedangClicked", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(juedangBtn)
     }

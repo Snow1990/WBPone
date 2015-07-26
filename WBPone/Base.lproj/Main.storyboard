@@ -115,7 +115,53 @@
                     <view key="view" contentMode="scaleToFill" id="fgO-qx-P1c">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n7-sV-wwS">
+                                <rect key="frame" x="200" y="164" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Rk9-Gd-Oke"/>
+                                    <constraint firstAttribute="height" constant="30" id="orz-Sx-ah6"/>
+                                </constraints>
+                                <state key="normal" title="凭证查询">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVh-oZ-vdz">
+                                <rect key="frame" x="200" y="264" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3wT-cK-Tho"/>
+                                    <constraint firstAttribute="width" constant="200" id="iR0-vB-aI0"/>
+                                </constraints>
+                                <state key="normal" title="库存表">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuf-PB-WnQ">
+                                <rect key="frame" x="200" y="214" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WbC-BI-eZe"/>
+                                    <constraint firstAttribute="width" constant="200" id="kmw-kH-trq"/>
+                                </constraints>
+                                <state key="normal" title="流水表">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="GVh-oZ-vdz" secondAttribute="centerX" id="2rr-OM-gVz"/>
+                            <constraint firstAttribute="centerX" secondItem="0n7-sV-wwS" secondAttribute="centerX" id="Kil-bj-3eZ"/>
+                            <constraint firstItem="Zuf-PB-WnQ" firstAttribute="top" secondItem="0n7-sV-wwS" secondAttribute="bottom" constant="20" id="VTd-eG-2Pl"/>
+                            <constraint firstAttribute="centerX" secondItem="Zuf-PB-WnQ" secondAttribute="centerX" id="XEW-Sc-QpC"/>
+                            <constraint firstItem="0n7-sV-wwS" firstAttribute="top" secondItem="3vK-PH-CjT" secondAttribute="bottom" constant="100" id="jQB-Vx-kQY"/>
+                            <constraint firstItem="GVh-oZ-vdz" firstAttribute="top" secondItem="Zuf-PB-WnQ" secondAttribute="bottom" constant="20" id="kx5-hH-N7c"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="搜索" id="RNw-ga-hhi"/>
                 </viewController>
@@ -136,8 +182,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOE-6l-dzh">
-                                <rect key="frame" x="285" y="168" width="30" height="30"/>
-                                <state key="normal" title="登出">
+                                <rect key="frame" x="255" y="364" width="90" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="退出当前账户">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -147,15 +195,66 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xOE-6l-dzh" firstAttribute="top" secondItem="6IS-3d-4St" secondAttribute="bottom" constant="104" id="4d2-Rx-QJR"/>
+                            <constraint firstItem="xOE-6l-dzh" firstAttribute="top" secondItem="6IS-3d-4St" secondAttribute="bottom" constant="300" id="4d2-Rx-QJR"/>
                             <constraint firstAttribute="centerX" secondItem="xOE-6l-dzh" secondAttribute="centerX" id="nUB-Hk-9dI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="XvS-bA-tOL"/>
+                    <connections>
+                        <segue destination="s0i-b9-VmD" kind="show" identifier="ToAddMoneySegue" id="iMH-W8-o3a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2g-8m-P6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2749" y="312"/>
+        </scene>
+        <!--加钱-->
+        <scene sceneID="SDL-v8-02a">
+            <objects>
+                <viewController id="s0i-b9-VmD" customClass="AddMoneyViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q24-vv-hxR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Up1-Qe-09d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RE6-Rz-DCL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gys-rH-kce">
+                                <rect key="frame" x="200" y="115" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="U4X-HD-gt2"/>
+                                    <constraint firstAttribute="height" constant="30" id="yHZ-is-p7S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQF-tp-Yf4">
+                                <rect key="frame" x="285" y="167" width="30" height="30"/>
+                                <state key="normal" title="确定">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneBtnClick:" destination="s0i-b9-VmD" eventType="touchUpInside" id="9m6-00-iNr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZQF-tp-Yf4" firstAttribute="top" secondItem="gys-rH-kce" secondAttribute="bottom" constant="22" id="A7L-by-HJx"/>
+                            <constraint firstAttribute="centerX" secondItem="gys-rH-kce" secondAttribute="centerX" id="CaI-Lh-yoN"/>
+                            <constraint firstItem="gys-rH-kce" firstAttribute="top" secondItem="q24-vv-hxR" secondAttribute="bottom" constant="51" id="LNi-o0-wwJ"/>
+                            <constraint firstAttribute="centerX" secondItem="ZQF-tp-Yf4" secondAttribute="centerX" id="mUr-v6-frN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="加钱" id="RMt-oC-xPT"/>
+                    <connections>
+                        <outlet property="moneyTF" destination="gys-rH-kce" id="wuF-gF-8Vm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARe-uS-YPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3572" y="312"/>
         </scene>
         <!--首页-->
         <scene sceneID="ZcG-Vm-7Rd">
@@ -242,7 +341,7 @@
         <!--1-->
         <scene sceneID="vM0-R3-5QQ">
             <objects>
-                <viewController id="Pwi-Qk-nGL" sceneMemberID="viewController">
+                <viewController id="Pwi-Qk-nGL" customClass="DiandangViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fDk-Rb-uaX"/>
                         <viewControllerLayoutGuide type="bottom" id="rey-Vi-CPn"/>
@@ -330,11 +429,12 @@
                     <connections>
                         <outlet property="passwordTextField" destination="ECo-5J-1wm" id="WZP-Kj-hW8"/>
                         <outlet property="userTextField" destination="HoD-1t-k2x" id="PeW-qc-Rxj"/>
+                        <segue destination="W3h-yK-3zX" kind="presentation" identifier="SignupSuccesful" id="pft-5D-Qc2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3U-CN-RWw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="1046"/>
+            <point key="canvasLocation" x="241" y="1066"/>
         </scene>
         <!--我的-->
         <scene sceneID="KIp-Ut-kXc">
@@ -398,4 +498,7 @@
         <image name="tab_icon1_normal" width="29" height="22"/>
         <image name="tab_icon3_normal" width="29" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="p8O-EA-DT9"/>
+    </inferredMetricsTieBreakers>
 </document>
