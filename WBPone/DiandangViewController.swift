@@ -54,6 +54,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         doneBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         doneBtn.backgroundColor = UIColor.orangeColor()
         doneBtn.addTarget(self, action: "doneClick", forControlEvents: UIControlEvents.TouchUpInside)
+        doneBtn.enabled = false
         self.view.addSubview(doneBtn)
     }
     
@@ -106,13 +107,18 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         }
         if let value = keyValueViewArr[5].value {
             goods.price = NSString(string: value).doubleValue
+            let account = Account()
             let user = UserInfo.currentUser()!
-            if let account = user["account"] as? Double {
-                user["account"] = account - goods.price
-                uploadObjects.append(user)
-            }
+            let balance = user["balance"] as! Double
             
+            account.money = -goods.price
+            account.balance = balance + account.money
+            account.remark = "抵押。"
+            user["balance"] = account.balance
             
+            uploadObjects.append(user)
+            uploadObjects.append(account)
+
         }
         if let value = keyValueViewArr[6].value {
             goods.time = NSString(string: value).doubleValue
@@ -130,7 +136,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         deal.dealId = dealKeyValueView.value
         deal.customer = customer
         deal.goods = goods
-        deal.user = PFUser.currentUser()!
+        deal.user = UserInfo.currentUser()!
         deal.profit = 0
         deal.isDone = false
         deal.isDead = false
@@ -154,6 +160,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
             if error == nil {
                 println("load seccess")
                 self.dealKeyValueView.value = Int(count)
+                self.doneBtn.enabled = true
                 
             } else if let error = error {
                 

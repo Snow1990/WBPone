@@ -9,7 +9,7 @@
 import Foundation
 
 class CustomerInfo: PFObject {
-//    @NSManaged var id: String!
+
     @NSManaged var name: String?
     @NSManaged var cardNo: String?
     @NSManaged var telephone: String?
@@ -17,9 +17,14 @@ class CustomerInfo: PFObject {
     override init() {
         super.init()
     }
-//    init(id: String) {
-//        super.init()
-//        self.id = id
+    
+//    override class func query() -> PFQuery? {
+//
+//        let query = PFQuery(className: CustomerInfo.parseClassName())
+//        
+//        query.orderByDescending("createdAt")
+//        
+//        return query
 //    }
     
    

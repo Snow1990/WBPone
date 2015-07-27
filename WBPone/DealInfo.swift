@@ -9,8 +9,9 @@
 import Foundation
 
 class DealInfo: PFObject {
+    
     @NSManaged var dealId: Int
-    @NSManaged var user: PFUser!
+    @NSManaged var user: UserInfo!
     @NSManaged var customer: CustomerInfo!
     @NSManaged var goods: GoodsInfo!
     // 利润

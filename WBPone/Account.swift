@@ -1,40 +1,43 @@
 //
-//  GoodsInfo.swift
+//  Account.swift
 //  WBPone
 //
-//  Created by SN on 15/7/23.
+//  Created by SN on 15/7/26.
 //  Copyright (c) 2015年 Snow. All rights reserved.
 //
 
 import Foundation
 
-class GoodsInfo: PFObject {
-
-    @NSManaged var name: String?
-    @NSManaged var type: String?
-    @NSManaged var count: Double
-    @NSManaged var price: Double
-    
-    // 每天利息
-    @NSManaged var interestPerDay: Double
-    // 每月利息
-    @NSManaged var interestPerMonth: Double
-    // 抵押时间
-    @NSManaged var time: Double
+class Account: PFObject {
+    // 余额
+    @NSManaged var balance: Double
+    // 交易额
+    @NSManaged var money: Double
+    // 交易信息
     @NSManaged var remark: String?
+    
     
     override init() {
         super.init()
     }
+    
+    override class func query() -> PFQuery? {
 
+        let query = PFQuery(className: Account.parseClassName())
+       
+        query.orderByDescending("createdAt")
+        
+        return query
+    }
     
 }
-extension GoodsInfo: PFSubclassing {
+
+extension Account: PFSubclassing {
     
     // Table view delegate methods here
     //1
     class func parseClassName() -> String {
-        return "GoodsInfo"
+        return "Account"
     }
     
     //2

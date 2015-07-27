@@ -31,7 +31,7 @@ class RegisterViewController: UIViewController {
         //2
         user.username = userTextField.text
         user.password = passwordTextField.text
-        user.account = 0
+        user.balance = 0
         
         //3
         user.signUpInBackgroundWithBlock { succeeded, error in

@@ -8,9 +8,32 @@
 
 import Foundation
 
-class InterestInfo {
-    var id: String!
-    var money: Double!
+class InterestInfo: PFObject {
 
-    var date: String?
+    @NSManaged var idealObjectId: String!
+    @NSManaged var user: UserInfo!
+    @NSManaged var money: Double
+
+    override init() {
+        super.init()
+    }
+    
+    
+    
+}
+extension InterestInfo: PFSubclassing {
+    
+    // Table view delegate methods here
+    //1
+    class func parseClassName() -> String {
+        return "InterestInfo"
+    }
+    
+    //2
+    override class func initialize() {
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
 }

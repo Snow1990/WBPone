@@ -30,7 +30,7 @@ class MyViewController: UIViewController, AccountDelegate {
         resetContentFrame()
     }
     override func viewDidAppear(animated: Bool) {
-        userAccountView.value = UserInfo.currentUser()!["account"] as? Double
+        userAccountView.value = UserInfo.currentUser()!["balance"] as? Double
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +59,7 @@ class MyViewController: UIViewController, AccountDelegate {
         self.view.addSubview(userNameView)
         
         userAccountView.key = "账户余额："
-        userAccountView.value = UserInfo.currentUser()!["account"] as? Double
+        userAccountView.value = UserInfo.currentUser()!["balance"] as? Double
         userAccountView.delegate = self
         self.view.addSubview(userAccountView)
         
