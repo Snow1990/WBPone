@@ -55,7 +55,6 @@ class DiandangViewController: UIViewController {
         }
         
         doneBtn.setTitle("确定", forState: UIControlState.Normal)
-        doneBtn.setTitle("保存中...", forState: UIControlState.Highlighted)
         doneBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         doneBtn.backgroundColor = UIColor.orangeColor()
         doneBtn.addTarget(self, action: "doneClick", forControlEvents: UIControlEvents.TouchUpInside)
@@ -95,6 +94,7 @@ class DiandangViewController: UIViewController {
     
     // 点击完成按钮
     func doneClick() {
+        doneBtn.setTitle("保存中...", forState: UIControlState.Normal)
 
         var uploadObjects = [AnyObject]()
         
@@ -122,7 +122,7 @@ class DiandangViewController: UIViewController {
             account.user = user
             account.money = -deal.ponePrice
             account.balance = balance + account.money
-            account.remark = "抵押。"
+            account.remark = "抵押物品。"
             user["balance"] = account.balance
             
             uploadObjects.append(user)

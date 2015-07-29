@@ -124,6 +124,8 @@ class DealDetailViewController: UIViewController {
                 35)
         }
         var lastViewFrame = keyValueViewArr[keyValueViewArr.count - 1].frame
+        rootView.contentSize.height = lastViewFrame.maxY
+        
         for (index,keyValueView) in enumerate(interestViewArr) {
             keyValueView.frame = CGRectMake(
                 0,
@@ -178,8 +180,8 @@ class DealDetailViewController: UIViewController {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy年MM月dd日"
             let dateString = dateFormatter.stringFromDate(interest.createdAt!)
-            interestView.key = dateString
-            interestView.value = "\(interest.money)"
+            interestView.key = "\(interest.money)"
+            interestView.value = dateString
             self.interestViewArr.append(interestView)
             self.rootView.addSubview(interestView)
         }

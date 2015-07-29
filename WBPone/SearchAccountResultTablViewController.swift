@@ -52,12 +52,6 @@ class SearchAccountResultTablViewController: PFQueryTableViewController {
         return cell
     }
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-////        selectDeal = self.objectAtIndexPath(indexPath) as? DealInfo
-////        self.performSegueWithIdentifier(ToDealDetailSegue, sender: nil)
-//        
-//    }
-    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return SearchAccountResultTableViewCell.getCellHeight()
     }

@@ -1,5 +1,5 @@
 //
-//  ShudangViewController.swift
+//  JuedangViewController.swift
 //  WBPone
 //
 //  Created by SN on 15/7/27.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ShudangViewController: UIViewController {
+class JuedangViewController: UIViewController {
     
     // MARK:- Properties
-    let keys = ["凭证编号","赎当金额"]
-    
+    let keys = ["凭证编号","出售金额"]
+
     // MARK:- UI Elements
     var rootView = TPKeyboardAvoidingScrollView()
     var keyValueViewArr = [LabelTFView]()
     var doneBtn = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-
+    
     // MARK:- Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class ShudangViewController: UIViewController {
             self.keyValueViewArr.append(keyValueView)
             self.rootView.addSubview(keyValueView)
         }
-    
+        
         doneBtn.setTitle("确定", forState: UIControlState.Normal)
         doneBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         doneBtn.backgroundColor = UIColor.orangeColor()
@@ -61,7 +61,6 @@ class ShudangViewController: UIViewController {
             350 * Constants.Scale,
             44)
     }
-    
     // 点击完成按钮
     func doneClick() {
         
@@ -71,19 +70,19 @@ class ShudangViewController: UIViewController {
         }
         if keyValueViewArr[0].value! == ""
             || keyValueViewArr[1].value! == "" {
-                self.showStringErrorView("凭证编号或赎当金额不能为空！")
+                self.showStringErrorView("凭证编号或出售金额不能为空！")
                 return
         }
-
+        
         let dealId = NSString(string: keyValueViewArr[0].value!).integerValue
         let redemptionPrice = NSString(string: keyValueViewArr[1].value!).doubleValue
-
+        
         let query = DealInfo.query()!
         query.whereKey("dealId", equalTo: dealId)
         
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
-
+            
             if error == nil {
                 // The find succeeded.
                 println("Successfully retrieved \(objects!.count) scores.")
@@ -96,26 +95,29 @@ class ShudangViewController: UIViewController {
                         }
                         
                         var uploadObjects = [AnyObject]()
-     
+                        
                         let account = Account()
                         let user = UserInfo.currentUser()!
+                        
                         // 交易详情
                         deal.redemptionPrice = redemptionPrice
                         deal.profit = deal.profit + deal.redemptionPrice - deal.ponePrice
                         deal.isDone = true
+                        deal.isDead = true
                         
                         // 交易流水
                         let balance = user["balance"] as! Double
                         account.user = user
                         account.money = deal.redemptionPrice
                         account.balance = balance + account.money
-                        account.remark = "赎回物品。"
+                        account.remark = "卖出物品。"
                         
                         user["balance"] = account.balance
                         
                         uploadObjects.append(deal)
                         uploadObjects.append(user)
                         uploadObjects.append(account)
+
                         // 上传数据
                         PFObject.saveAllInBackground(uploadObjects) { (succeeded, error) -> Void in
                             if succeeded {
@@ -140,8 +142,16 @@ class ShudangViewController: UIViewController {
             }
         }
         
-
+        
     }
+    /*
+    // MARK: - Navigation
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
 }

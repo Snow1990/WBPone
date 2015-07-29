@@ -19,16 +19,16 @@ class SearchAccountResultTableViewCell: PFTableViewCell {
     var changeMoney: Double = 0 {
         didSet {
             if changeMoney > 0 {
-                self.changeMoneyLabel.text = "资金变动：+ \(changeMoney)"
+                self.changeMoneyLabel.text = "变动:+ \(changeMoney)"
 
             }else {
-                self.changeMoneyLabel.text = "资金变动：\(changeMoney)"
+                self.changeMoneyLabel.text = "变动:\(changeMoney)"
             }
         }
     }
     var blance: Double = 0 {
         didSet {
-            self.balanceLabel.text = "账户余额：\(blance)"
+            self.balanceLabel.text = "余额:\(blance)"
             
         }
     }
@@ -38,7 +38,7 @@ class SearchAccountResultTableViewCell: PFTableViewCell {
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy年MM月dd日 HH:mm"
                 let dateString = dateFormatter.stringFromDate(createdBy)
-                self.createdByLabel.text = "抵押时间：" + dateString
+                self.createdByLabel.text = "日期:" + dateString
             }
         }
     }
