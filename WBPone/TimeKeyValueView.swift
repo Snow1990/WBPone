@@ -1,17 +1,16 @@
 //
-//  TypeKeyValueView.swift
+//  TimeKeyValueView.swift
 //  WBPone
 //
-//  Created by SN on 15/7/25.
+//  Created by SN on 15/7/28.
 //  Copyright (c) 2015年 Snow. All rights reserved.
 //
 
 import UIKit
 
-class TypeKeyValueView: UIView, ZHPickViewDelegate {
+class TimeKeyValueView: UIView, ZHPickViewDelegate {
     
     // MARK:- Properties
-    let chooseArray = [ "金饰","电脑","貂衣","其他"]
     override var frame: CGRect {
         didSet {
             self.resetContentFrame()
@@ -23,8 +22,14 @@ class TypeKeyValueView: UIView, ZHPickViewDelegate {
             typeKeyLabel.text = key
         }
     }
-    var value: String? {
-        return typeValueBtn.titleLabel?.text
+    var value: NSDate! {
+        didSet {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy年MM月dd日"
+            let dateString = dateFormatter.stringFromDate(value)
+            typeValueBtn.setTitle(dateString, forState: UIControlState.Normal)
+            
+        }
     }
     
     
@@ -32,7 +37,7 @@ class TypeKeyValueView: UIView, ZHPickViewDelegate {
     var typeKeyLabel = UILabel()
     var typeValueBtn = UIButton()
     var pickView: ZHPickView!
-
+    
     
     // MARK:- Init
     override init(frame: CGRect) {
@@ -51,17 +56,25 @@ class TypeKeyValueView: UIView, ZHPickViewDelegate {
         typeKeyLabel.textColor = UIColor.grayColor()
         self.addSubview(typeKeyLabel)
         
-        typeValueBtn.setTitle("金饰", forState: UIControlState.Normal)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        let dateNow = NSDate()
+        let dateString = dateFormatter.stringFromDate(dateNow)
+        let date = dateFormatter.dateFromString(dateString)!
+        self.value = date
         typeValueBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         typeValueBtn.titleLabel?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         typeValueBtn.titleLabel?.textAlignment = NSTextAlignment.Right
         typeValueBtn.addTarget(self, action: "typeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(typeValueBtn)
         
-        pickView = ZHPickView(pickviewWithArray: chooseArray, isHaveNavControler: false)
+
+        
+        pickView = ZHPickView(datePickWithDate: dateNow, datePickerMode: UIDatePickerMode.Date, isHaveNavControler: false)
         pickView.delegate = self
 
-
+  
     }
     func typeBtnClick() {
         pickView.show()
@@ -83,11 +96,18 @@ class TypeKeyValueView: UIView, ZHPickViewDelegate {
     }
     
     func toobarDonBtnHaveClick(pickView: ZHPickView!, resultString: String!) {
-        typeValueBtn.setTitle(resultString, forState: UIControlState.Normal)
-    }
-    
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        if let date = dateFormatter.dateFromString(resultString) {
 
-   
+            self.value = date
+        }
+    }
+
+    
+    
+    
     
     
     

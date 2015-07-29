@@ -51,7 +51,7 @@ class MyViewController: UIViewController, AccountDelegate {
     
     
     func setupUIElements() {
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = Constants.backgroundColor
         self.navigationItem.title = "我的账户"
         
         userNameView.key = "用户名："

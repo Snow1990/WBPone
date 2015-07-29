@@ -8,13 +8,14 @@
 
 import UIKit
 
-class DiandangViewController: UIViewController, UITextFieldDelegate {
+class DiandangViewController: UIViewController {
     
     
     // MARK:- Properties
-    let keys = ["姓名","身份证号","联系电话","当物名称","数量","价格","抵押时间","每天利息","每月利息","备注"]
+    let keys = ["姓名","身份证号","联系电话","当物名称","数量","价格","抵押时间(月)","每天利息","每月利息","备注"]
     
     // MARK:- UI Elements
+    var rootView = TPKeyboardAvoidingScrollView()
     var dealKeyValueView = DealKeyValueView()
     var typeKeyValueView = TypeKeyValueView()
     var keyValueViewArr = [LabelTFView]()
@@ -32,30 +33,34 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupUIElements() {
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.rootView.frame = self.view.frame
+        self.rootView.backgroundColor = Constants.backgroundColor
+        self.view.addSubview(rootView)
+        
         self.navigationItem.title = "典当"
         
         dealKeyValueView.key = "凭证序号："
         dealKeyValueView.value = 0
-        self.view.addSubview(dealKeyValueView)
+        self.rootView.addSubview(dealKeyValueView)
         
         typeKeyValueView.key = "类别："
-        self.view.addSubview(typeKeyValueView)
+        self.rootView.addSubview(typeKeyValueView)
         
         for key in keys {
             let keyValueView = LabelTFView()
             keyValueView.key = key + ":"
-            keyValueView.valueTextField.delegate = self
+//            keyValueView.valueTextField.delegate = self
             self.keyValueViewArr.append(keyValueView)
-            self.view.addSubview(keyValueView)
+            self.rootView.addSubview(keyValueView)
         }
         
         doneBtn.setTitle("确定", forState: UIControlState.Normal)
+        doneBtn.setTitle("保存中...", forState: UIControlState.Highlighted)
         doneBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         doneBtn.backgroundColor = UIColor.orangeColor()
         doneBtn.addTarget(self, action: "doneClick", forControlEvents: UIControlEvents.TouchUpInside)
         doneBtn.enabled = false
-        self.view.addSubview(doneBtn)
+        self.rootView.addSubview(doneBtn)
     }
     
     // MARK: Update Frame
@@ -63,7 +68,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         
         dealKeyValueView.frame = CGRectMake(
             0,
-            64,
+            0,
             Constants.Rect.width,
             35)
         typeKeyValueView.frame  = CGRectMake(
@@ -93,25 +98,29 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
 
         var uploadObjects = [AnyObject]()
         
+        let deal = DealInfo()
         let customer = CustomerInfo()
+        let goods = GoodsInfo()
+        let account = Account()
+        let user = UserInfo.currentUser()!
+
         customer.name = keyValueViewArr[0].value
         customer.cardNo = keyValueViewArr[1].value
         customer.telephone = keyValueViewArr[2].value
         uploadObjects.append(customer)
      
-        let goods = GoodsInfo()
         goods.type = typeKeyValueView.value
         goods.name = keyValueViewArr[3].value
         if let value = keyValueViewArr[4].value {
             goods.count = NSString(string: value).doubleValue
         }
         if let value = keyValueViewArr[5].value {
-            goods.price = NSString(string: value).doubleValue
-            let account = Account()
-            let user = UserInfo.currentUser()!
+            deal.ponePrice = NSString(string: value).doubleValue
+
             let balance = user["balance"] as! Double
             
-            account.money = -goods.price
+            account.user = user
+            account.money = -deal.ponePrice
             account.balance = balance + account.money
             account.remark = "抵押。"
             user["balance"] = account.balance
@@ -132,11 +141,11 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         goods.remark = keyValueViewArr[9].value
         uploadObjects.append(goods)
         
-        let deal = DealInfo()
         deal.dealId = dealKeyValueView.value
         deal.customer = customer
         deal.goods = goods
         deal.user = UserInfo.currentUser()!
+        deal.redemptionPrice = 0
         deal.profit = 0
         deal.isDone = false
         deal.isDead = false
@@ -145,10 +154,16 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         // 上传数据
         PFObject.saveAllInBackground(uploadObjects) { (succeeded, error) -> Void in
             if succeeded {
-                println("Objects Uploaded")
-                self.navigationController?.popViewControllerAnimated(true)
+
+                let alert = UIAlertController(title: "Success", message: "保存成功", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+                    self.navigationController?.popViewControllerAnimated(true)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
             } else {
-                println("Error: \(error) \(error!.userInfo!)")
+                self.showErrorView(error!)
+
             }
         }
     }
@@ -159,6 +174,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         query.countObjectsInBackgroundWithBlock { (count, error) -> Void in
             if error == nil {
                 println("load seccess")
+
                 self.dealKeyValueView.value = Int(count)
                 self.doneBtn.enabled = true
                 
@@ -170,12 +186,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    // MARK: Text Field Delegate
-
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+   
     
     
    

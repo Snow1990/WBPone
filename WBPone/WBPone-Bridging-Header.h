@@ -7,9 +7,9 @@
 #import <ParseUI/ParseUI.h>
 #import <Bolts/Bolts.h>
 
+#import "TPKeyboardAvoidingScrollView.h"
+#import "UIScrollView+TPKeyboardAvoidingAdditions.h"
 
 #import "DKCircleButton.h"
-
-
-
 #import "ZHPickView.h" 
+

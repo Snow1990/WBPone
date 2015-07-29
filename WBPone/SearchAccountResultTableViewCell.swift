@@ -1,33 +1,35 @@
 //
-//  SearchResultTableViewCell.swift
+//  SearchAccountResultTableViewCell.swift
 //  WBPone
 //
-//  Created by SN on 15/7/27.
+//  Created by SN on 15/7/29.
 //  Copyright (c) 2015年 Snow. All rights reserved.
 //
 
 import UIKit
 
-
-class SearchResultTableViewCell: PFTableViewCell {
+class SearchAccountResultTableViewCell: PFTableViewCell {
     
     // MARK:- Properties
-    var dealId: Int = 0 {
+    var remark: String? {
         didSet {
-            self.dealIdLabel.text = "凭证Id：" + "\(dealId)"
+            self.remarkLabel.text = remark
         }
     }
-    var goodsName: String? {
+    var changeMoney: Double = 0 {
         didSet {
-            if let goodsName = goodsName {
-                self.goodsNameLabel.text = "物品名称：" + goodsName
+            if changeMoney > 0 {
+                self.changeMoneyLabel.text = "资金变动：+ \(changeMoney)"
+
+            }else {
+                self.changeMoneyLabel.text = "资金变动：\(changeMoney)"
             }
         }
     }
-    var goodsPrice: Double = 0 {
+    var blance: Double = 0 {
         didSet {
-            self.goodsPriceLabel.text = "抵押价格：" + "\(goodsPrice)"
-
+            self.balanceLabel.text = "账户余额：\(blance)"
+            
         }
     }
     var createdBy: NSDate? {
@@ -40,30 +42,14 @@ class SearchResultTableViewCell: PFTableViewCell {
             }
         }
     }
-    var state: (isDone: Bool, isDead: Bool)! {
-        didSet {
-            if state.isDone {
-                if state.isDead {
-                    stateLabel.text = "交易完成：已出售"
-
-                }else {
-                    stateLabel.text = "交易完成：已取回"
-                }
-            }else {
-                stateLabel.text = "抵押中"
-            }
-        }
-    }
-    
     // MARK:- UI Elements
-    var dealIdLabel = UILabel()
-    var goodsNameLabel = UILabel()
-    var goodsPriceLabel = UILabel()
+
+    var remarkLabel = UILabel()
     var createdByLabel = UILabel()
-    var stateLabel = UILabel()
+    var changeMoneyLabel = UILabel()
+    var balanceLabel = UILabel()
     private var separateView: UIImageView  = UIImageView()
-
-
+    
     // MARK:- Init
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -77,29 +63,27 @@ class SearchResultTableViewCell: PFTableViewCell {
     }
     
     class func reuseIdentifier() -> String{
-        return "SearchResultTableViewCell"
+        return "SearchAccountResultTableViewCell"
     }
+    
     class func getCellHeight() -> CGFloat {
         return 155 * Constants.Scale
     }
-
+    
     func setupUIElements() {
         self.backgroundColor = Constants.backgroundColor
         
-        self.dealIdLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.addSubview(dealIdLabel)
-        
-        self.goodsNameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.addSubview(goodsNameLabel)
+        self.remarkLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.addSubview(remarkLabel)
         
         self.createdByLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         self.addSubview(createdByLabel)
         
-        self.goodsPriceLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.addSubview(goodsPriceLabel)
+        self.changeMoneyLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.addSubview(changeMoneyLabel)
         
-        self.stateLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        self.addSubview(stateLabel)
+        self.balanceLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        self.addSubview(balanceLabel)
         
         self.separateView.image = UIImage(named: "separate")
         self.addSubview(separateView)
@@ -107,28 +91,27 @@ class SearchResultTableViewCell: PFTableViewCell {
     
     // MARK: Update Frame
     func resetContentFrame() {
-        
-        goodsNameLabel.frame = CGRectMake(
+        remarkLabel.frame = CGRectMake(
             28 * Constants.Scale,
             24 * Constants.Scale,
-            304 * Constants.Scale,
+            692 * Constants.Scale,
             28 * Constants.Scale)
-        dealIdLabel.frame = CGRectMake(
-            388 * Constants.Scale,
-            24 * Constants.Scale,
-            304 * Constants.Scale,
-            24 * Constants.Scale)
+//        dealIdLabel.frame = CGRectMake(
+//            388 * Constants.Scale,
+//            24 * Constants.Scale,
+//            304 * Constants.Scale,
+//            24 * Constants.Scale)
         createdByLabel.frame = CGRectMake(
             28 * Constants.Scale,
             66 * Constants.Scale,
             660 * Constants.Scale,
             24 * Constants.Scale)
-        stateLabel.frame = CGRectMake(
+        changeMoneyLabel.frame = CGRectMake(
             28 * Constants.Scale,
             103 * Constants.Scale,
             304 * Constants.Scale,
             24 * Constants.Scale)
-        goodsPriceLabel.frame = CGRectMake(
+        balanceLabel.frame = CGRectMake(
             388 * Constants.Scale,
             103 * Constants.Scale,
             304 * Constants.Scale,
@@ -138,6 +121,5 @@ class SearchResultTableViewCell: PFTableViewCell {
             155 * Constants.Scale - 2,
             Constants.Rect.width,
             2)
-        
     }
 }

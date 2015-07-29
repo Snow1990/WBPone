@@ -43,7 +43,7 @@ class DealKeyValueView: UIView {
     }
     
     func setupUIElements() {
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = Constants.backgroundColor
         
         idKeyLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
         idKeyLabel.textColor = UIColor.grayColor()

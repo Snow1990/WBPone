@@ -10,7 +10,7 @@ import Foundation
 
 class InterestInfo: PFObject {
 
-    @NSManaged var idealObjectId: String!
+    @NSManaged var deal: DealInfo!
     @NSManaged var user: UserInfo!
     @NSManaged var money: Double
 
@@ -18,6 +18,14 @@ class InterestInfo: PFObject {
         super.init()
     }
     
+    override class func query() -> PFQuery? {
+        
+        let query = PFQuery(className: InterestInfo.parseClassName())
+        
+        query.orderByDescending("createdAt")
+        
+        return query
+    }
     
     
 }

@@ -13,7 +13,6 @@ class GoodsInfo: PFObject {
     @NSManaged var name: String?
     @NSManaged var type: String?
     @NSManaged var count: Double
-    @NSManaged var price: Double
     
     // 每天利息
     @NSManaged var interestPerDay: Double

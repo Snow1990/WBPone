@@ -182,7 +182,7 @@
         <!--库存表-->
         <scene sceneID="vGC-Eq-tbR">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="L7n-hB-E89" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="L7n-hB-E89" customClass="SearchStoreViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5X1-Bc-6IX"/>
                         <viewControllerLayoutGuide type="bottom" id="avs-8C-zpj"/>
@@ -190,7 +190,45 @@
                     <view key="view" contentMode="scaleToFill" id="0kt-yD-aA7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftr-c5-zgT">
+                                <rect key="frame" x="200" y="224" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="be2-Hs-NgS"/>
+                                    <constraint firstAttribute="height" constant="30" id="tDt-BE-awW"/>
+                                </constraints>
+                                <state key="normal" title="逾期库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="ABe-UX-JXL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZj-gb-GOV">
+                                <rect key="frame" x="200" y="164" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HQ3-fg-jmv"/>
+                                    <constraint firstAttribute="width" constant="200" id="nQq-aF-E3w"/>
+                                </constraints>
+                                <state key="normal" title="全部库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="3Up-SC-ZKx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ftr-c5-zgT" secondAttribute="centerX" id="4r2-Kw-XUd"/>
+                            <constraint firstItem="Ftr-c5-zgT" firstAttribute="top" secondItem="VZj-gb-GOV" secondAttribute="bottom" constant="30" id="iXh-sR-Cti"/>
+                            <constraint firstAttribute="centerX" secondItem="VZj-gb-GOV" secondAttribute="centerX" id="uhQ-3G-o9b"/>
+                            <constraint firstItem="VZj-gb-GOV" firstAttribute="top" secondItem="5X1-Bc-6IX" secondAttribute="bottom" constant="100" id="utU-3W-2Pe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="库存表" id="MVv-lP-4p1"/>
                 </viewController>
@@ -346,10 +384,10 @@
             </objects>
             <point key="canvasLocation" x="2725" y="-1055"/>
         </scene>
-        <!--4-->
+        <!--绝当-->
         <scene sceneID="NqI-0b-cyz">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="QtW-pM-1MW" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="QtW-pM-1MW" customClass="JuedangViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C9b-h8-DQL"/>
                         <viewControllerLayoutGuide type="bottom" id="Zgq-qH-Gb8"/>
@@ -359,7 +397,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="4" id="SAH-dH-VD0"/>
+                    <navigationItem key="navigationItem" title="绝当" id="SAH-dH-VD0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dX-Jh-VYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -438,7 +476,7 @@
         <!--流水表-->
         <scene sceneID="twa-4c-CNh">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="HQN-Lv-eM2" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="HQN-Lv-eM2" customClass="SearchAccountViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EJO-vN-mVj"/>
                         <viewControllerLayoutGuide type="bottom" id="eub-Yc-7Ei"/>
@@ -449,15 +487,44 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="流水表" id="w9A-kT-tCP"/>
+                    <connections>
+                        <segue destination="J2j-ei-e2O" kind="show" identifier="ToSearchAccountResultSegue" id="3AL-23-i5b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0D-f7-ft0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4308" y="-1055"/>
         </scene>
-        <!--3-->
+        <!--Search Account Result Tabl View Controller-->
+        <scene sceneID="eTX-dC-6Z8">
+            <objects>
+                <tableViewController id="J2j-ei-e2O" customClass="SearchAccountResultTablViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Nb4-VP-np0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="usq-St-TWN">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="usq-St-TWN" id="6vZ-qg-zBt">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J2j-ei-e2O" id="r3o-T1-bUp"/>
+                            <outlet property="delegate" destination="J2j-ei-e2O" id="6jk-1Y-bDh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDs-53-ctq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5078" y="-1055"/>
+        </scene>
+        <!--续当-->
         <scene sceneID="AY4-aX-Ibi">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="eX5-xp-hhn" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="eX5-xp-hhn" customClass="XudangViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2BG-zV-src"/>
                         <viewControllerLayoutGuide type="bottom" id="65b-O3-kML"/>
@@ -467,16 +534,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="3" id="w4m-hL-V4b"/>
+                    <navigationItem key="navigationItem" title="续当" id="w4m-hL-V4b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zsp-t3-AdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3480" y="-1807"/>
         </scene>
-        <!--2-->
+        <!--赎当-->
         <scene sceneID="jnS-xm-hgK">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="bUn-jX-zER" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="bUn-jX-zER" customClass="ShudangViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4ui-Ua-QC3"/>
                         <viewControllerLayoutGuide type="bottom" id="zzs-EH-NNv"/>
@@ -486,13 +553,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="2" id="OX4-b5-6FI"/>
+                    <navigationItem key="navigationItem" title="赎当" id="OX4-b5-6FI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ5-ah-LKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3480" y="-2505"/>
         </scene>
-        <!--1-->
+        <!--典当-->
         <scene sceneID="vM0-R3-5QQ">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Pwi-Qk-nGL" customClass="DiandangViewController" customModule="WBPone" customModuleProvider="target" sceneMemberID="viewController">
@@ -505,7 +572,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="1" id="M7w-pv-nby"/>
+                    <navigationItem key="navigationItem" title="典当" id="M7w-pv-nby"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbh-2M-sAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -653,6 +720,7 @@
         <image name="tab_icon3_normal" width="29" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ABe-UX-JXL"/>
         <segue reference="p8O-EA-DT9"/>
     </inferredMetricsTieBreakers>
 </document>

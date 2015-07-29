@@ -51,14 +51,14 @@ class LabelLabelBtnView: UIView {
     }
     
     func setupUIElements() {
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = Constants.backgroundColor
         
         keyLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
         keyLabel.textColor = UIColor.grayColor()
         self.addSubview(keyLabel)
         
         valueLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        valueLabel.textAlignment = NSTextAlignment.Center
+        valueLabel.textAlignment = NSTextAlignment.Left
         self.addSubview(valueLabel)
         
         addBtn.addTarget(self, action: "addMoney", forControlEvents: UIControlEvents.TouchUpInside)

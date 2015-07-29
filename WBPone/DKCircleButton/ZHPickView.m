@@ -322,7 +322,10 @@
         }
     }else if (_datePicker) {
       
-        _resultString=[NSString stringWithFormat:@"%@",_datePicker.date];
+        NSDateFormatter *form= [[NSDateFormatter alloc] init];
+        [form setDateFormat:@"yyyy年MM月dd日"];
+        _resultString = [form stringFromDate:_datePicker.date];
+
     }
     if ([self.delegate respondsToSelector:@selector(toobarDonBtnHaveClick:resultString:)]) {
         [self.delegate toobarDonBtnHaveClick:self resultString:_resultString];

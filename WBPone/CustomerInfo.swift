@@ -17,17 +17,7 @@ class CustomerInfo: PFObject {
     override init() {
         super.init()
     }
-    
-//    override class func query() -> PFQuery? {
-//
-//        let query = PFQuery(className: CustomerInfo.parseClassName())
-//        
-//        query.orderByDescending("createdAt")
-//        
-//        return query
-//    }
-    
-   
+
 }
 
 extension CustomerInfo: PFSubclassing {

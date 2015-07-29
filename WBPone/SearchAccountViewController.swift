@@ -1,23 +1,22 @@
 //
-//  SearchDealIdViewController.swift
+//  SearchAccountViewController.swift
 //  WBPone
 //
-//  Created by SN on 15/7/26.
+//  Created by SN on 15/7/28.
 //  Copyright (c) 2015年 Snow. All rights reserved.
 //
 
 import UIKit
 
-class SearchDealIdViewController: UIViewController{
+class SearchAccountViewController: UIViewController {
     
     // MARK:- Properties
-    let keys = ["凭证序号","姓名","身份证号","联系电话"]
-    let ToSearchResultSegue = "ToSearchResultSegue"
-//    var currentQuery: PFQuery?
-
+    let keys = ["起始时间","终止时间"]
+    let ToSearchAccountResultSegue = "ToSearchAccountResultSegue"
+    
     // MARK:- UI Elements
     var rootView = TPKeyboardAvoidingScrollView()
-    var keyValueViewArr = [LabelTFView]()
+    var keyValueViewArr = [TimeKeyValueView]()
     var doneBtn = UIButton.buttonWithType(UIButtonType.System) as! UIButton
 
     // MARK:- Init
@@ -34,7 +33,7 @@ class SearchDealIdViewController: UIViewController{
         self.view.addSubview(rootView)
         
         for key in keys {
-            let keyValueView = LabelTFView()
+            let keyValueView = TimeKeyValueView()
             keyValueView.key = key + ":"
             self.keyValueViewArr.append(keyValueView)
             self.rootView.addSubview(keyValueView)
@@ -63,25 +62,30 @@ class SearchDealIdViewController: UIViewController{
             350 * Constants.Scale,
             44)
     }
+    
+    
     // 点击完成按钮
     func doneClick() {
-        self.performSegueWithIdentifier(ToSearchResultSegue, sender: nil)
+        self.performSegueWithIdentifier(ToSearchAccountResultSegue, sender: nil)
     }
-    
-   
     
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //判断是否是搜索结果界面
-        if let dest = segue.destinationViewController as? SearchResultTableViewController {
-            dest.dealId = keyValueViewArr[0].value
-            dest.name = keyValueViewArr[1].value
-            dest.cardNo = keyValueViewArr[2].value
-            dest.telephone = keyValueViewArr[3].value
+        //判断是否是课程界面
+        if let dest = segue.destinationViewController as? SearchAccountResultTablViewController {
+            
+//            let dateFormatter = NSDateFormatter()
+//            dateFormatter.dateFormat = "yyyy年MM月dd日"
+            
+
+            dest.startDate = keyValueViewArr[0].value
+            
+
+            dest.endDate = keyValueViewArr[1].value
+            
         }
     }
-    
     
 }

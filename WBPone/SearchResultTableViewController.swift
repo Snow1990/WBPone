@@ -20,17 +20,18 @@ class SearchResultTableViewController: PFQueryTableViewController {
     var name: String?
     var cardNo: String?
     var telephone: String?
+    var isDone: Bool?
+    var isOutOfTime: Bool?
 
-//    var currentQuery: PFQuery!
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadObjects()
+
+        self.tableView.backgroundColor = Constants.backgroundColor
         self.tableView.registerClass(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.reuseIdentifier())
 
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        loadObjects()
     }
     
     override func queryForTable() -> PFQuery {
@@ -60,6 +61,17 @@ class SearchResultTableViewController: PFQueryTableViewController {
                 query.whereKey("dealId", equalTo: NSString(string: dealId).integerValue)
             }
         }
+        if let isDone = isDone {
+            query.whereKey("isDone", equalTo: isDone)
+        }
+        if let isOutOfTime = isOutOfTime {
+            if isOutOfTime {
+                let dateNow = NSDate()
+                let secondsPerMonth: NSTimeInterval = 30*24*60*60
+                var lastMonthDate = dateNow.dateByAddingTimeInterval(-secondsPerMonth)
+                query.whereKey("updatedAt", lessThanOrEqualTo: lastMonthDate)
+            }
+        }
         return query
     }
     
@@ -70,10 +82,11 @@ class SearchResultTableViewController: PFQueryTableViewController {
 
         let deal = object as! DealInfo
         cell.dealId = deal.dealId
+        cell.goodsPrice = deal.ponePrice
+        cell.state = (deal.isDone, deal.isDead)
         cell.createdBy = deal.createdAt
         if let goods = deal.goods {
             cell.goodsName = goods["name"] as? String
-            cell.goodsPrice = goods["price"] as! Double
         }
         
         return cell
@@ -86,7 +99,15 @@ class SearchResultTableViewController: PFQueryTableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return SearchResultTableViewCell.getSize().height
+        return SearchResultTableViewCell.getCellHeight()
+    }
+    
+    // 滚动到底部自动加载下一页
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentSize.height > 0
+            && scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height {
+                loadNextPage()
+        }
     }
     
     // MARK: - Navigation

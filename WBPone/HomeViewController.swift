@@ -72,7 +72,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupUIElements() {
-//        self.view.backgroundColor = UIColor.orangeColor()
+//        self.view.backgroundColor = Constants.backgroundColor
 
 
 

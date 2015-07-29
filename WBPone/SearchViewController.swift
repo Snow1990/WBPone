@@ -23,7 +23,7 @@ class SearchViewController: UIViewController {
     }
     
     func setupUIElements() {
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = Constants.backgroundColor
     }
     
     // MARK: Update Frame

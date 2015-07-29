@@ -20,6 +20,7 @@ class AddMoneyViewController: UIViewController {
         let account = Account()
         let user = UserInfo.currentUser()!
         
+        account.user = user
         account.money = NSString(string: moneyTF.text).doubleValue
         let balance = user["balance"] as! Double
         account.balance = balance + account.money
@@ -30,10 +31,14 @@ class AddMoneyViewController: UIViewController {
         let uploadObjects = [user, account]
         PFObject.saveAllInBackground(uploadObjects) { (succeeded, error) -> Void in
             if succeeded {
-                println("Objects Uploaded")
-                self.navigationController?.popViewControllerAnimated(true)
+                let alert = UIAlertController(title: "Success", message: "保存成功", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+                    self.navigationController?.popViewControllerAnimated(true)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
             } else {
-                println("Error: \(error) \(error!.userInfo!)")
+                self.showErrorView(error!)
             }
         }
           
@@ -47,7 +52,7 @@ class AddMoneyViewController: UIViewController {
     }
     
     func setupUIElements() {
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = Constants.backgroundColor
     }
     
     // MARK: Update Frame

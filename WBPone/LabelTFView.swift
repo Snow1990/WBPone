@@ -46,7 +46,7 @@ class LabelTFView: UIView {
     }
     
     func setupUIElements() {
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = Constants.backgroundColor
 
         keyLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
         keyLabel.textColor = UIColor.grayColor()

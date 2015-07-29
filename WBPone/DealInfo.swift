@@ -14,6 +14,10 @@ class DealInfo: PFObject {
     @NSManaged var user: UserInfo!
     @NSManaged var customer: CustomerInfo!
     @NSManaged var goods: GoodsInfo!
+    // 抵押价格
+    @NSManaged var ponePrice: Double
+    // 赎回价格
+    @NSManaged var redemptionPrice: Double
     // 利润
     @NSManaged var profit: Double
     // 交易完成

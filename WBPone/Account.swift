@@ -15,7 +15,7 @@ class Account: PFObject {
     @NSManaged var money: Double
     // 交易信息
     @NSManaged var remark: String?
-    
+    @NSManaged var user: UserInfo!
     
     override init() {
         super.init()
