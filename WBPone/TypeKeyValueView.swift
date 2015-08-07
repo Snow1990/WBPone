@@ -11,7 +11,7 @@ import UIKit
 class TypeKeyValueView: UIView, ZHPickViewDelegate {
     
     // MARK:- Properties
-    let chooseArray = [ "金饰","电脑","貂衣","其他"]
+    let chooseArray = ["金饰","手机","电脑","貂衣","车","其他"]
     override var frame: CGRect {
         didSet {
             self.resetContentFrame()

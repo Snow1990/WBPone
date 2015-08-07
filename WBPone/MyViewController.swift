@@ -11,7 +11,7 @@ import UIKit
 class MyViewController: UIViewController, AccountDelegate {
 
     @IBAction func LogoffClick(sender: UIButton) {
-        PFUser.logOut()
+        UserInfo.logOut()
         self.navigationController?.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
 
     }

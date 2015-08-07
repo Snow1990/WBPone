@@ -12,7 +12,7 @@ class DiandangViewController: UIViewController {
     
     
     // MARK:- Properties
-    let keys = ["姓名","身份证号","联系电话","当物名称","数量","价格","抵押时间(月)","每天利息","每月利息","备注"]
+    let keys = ["姓名","身份证号","联系电话","当物名称","数量","价格","抵押时间(日)","每天利息","每月利息","备注"]
     
     // MARK:- UI Elements
     var rootView = TPKeyboardAvoidingScrollView()

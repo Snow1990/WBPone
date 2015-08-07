@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         //Check if user exists and logged in
-        if let user = PFUser.currentUser() {
+        if let user = UserInfo.currentUser() {
             if user.isAuthenticated() {
                 println("user exists and logged in")
                 self.performSegueWithIdentifier(tabViewMainSegue, sender: nil)
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func logInPressed(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(userTextField.text, password: passwordTextField.text) { user, error in
+        UserInfo.logInWithUsernameInBackground(userTextField.text, password: passwordTextField.text) { user, error in
             if user != nil {
                 self.performSegueWithIdentifier(self.tabViewMainSegue, sender: nil)
                 println("logIn")

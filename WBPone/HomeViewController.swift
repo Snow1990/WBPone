@@ -24,47 +24,6 @@ class HomeViewController: UIViewController {
         
         self.initTabBar()
 
-//        let player = PFObject(className: "Player")
-//        player.setObject("Snow", forKey: "Name")
-//        player.setObject(100, forKey: "Score")
-//        player.saveInBackgroundWithBlock { (succeeded, error) -> Void in
-//            if succeeded {
-//                println("Object Uploaded")
-//            } else {
-//                println("Error: \(error) \(error!.userInfo!)")
-//            }
-//        }
-//        player.deleteInBackgroundWithBlock { (succeeded, error) -> Void in
-//            if succeeded {
-//                println("Object deleted")
-//            } else {
-//                println("Error: \(error) \(error!.userInfo!)")
-//            }
-//        }
-//        func removeObject(object: AnyObject, forKey key: String)
-
-        
-//        let query = PFQuery(className: "Player")
-//        query.whereKey("Name", equalTo:"Snow")
-//        query.findObjectsInBackgroundWithBlock {
-//            (objects: [AnyObject]?, error: NSError?) -> Void in
-//            
-//            if error == nil {
-//                // The find succeeded.
-//                println("Successfully retrieved \(objects!.count) scores.")
-//                // Do something with the found objects
-//                if let objects = objects as? [PFObject] {
-//                    for object in objects {
-//                        println(object.objectId)
-//                    }
-//                }
-//            } else {
-//                // Log details of the failure
-//                println("Error: \(error!) \(error!.userInfo!)")
-//            }
-//        }
-        
-        
         setupUIElements()
         resetContentFrame()
         
@@ -72,9 +31,6 @@ class HomeViewController: UIViewController {
     }
     
     func setupUIElements() {
-//        self.view.backgroundColor = Constants.backgroundColor
-
-
 
         diandangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
         diandangBtn.setTitle("典当", forState: UIControlState.Normal)

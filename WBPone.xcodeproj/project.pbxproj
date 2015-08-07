@@ -32,7 +32,6 @@
 		877AA9951B63FAFD006A017E /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9941B63FAFD006A017E /* ZHPickView.m */; };
 		877AA9981B64C165006A017E /* LabelLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9971B64C165006A017E /* LabelLabelView.swift */; };
 		877AA99A1B64D6E1006A017E /* LabelLabelBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9991B64D6E1006A017E /* LabelLabelBtnView.swift */; };
-		877AA99E1B64DDAB006A017E /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA99D1B64DDAB006A017E /* AddMoneyViewController.swift */; };
 		877AA9A01B6519AF006A017E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA99F1B6519AF006A017E /* Account.swift */; };
 		877AA9A21B652AEA006A017E /* SearchDealIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9A11B652AEA006A017E /* SearchDealIdViewController.swift */; };
 		877AA9AB1B65C8BA006A017E /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9AA1B65C8BA006A017E /* SearchResultTableViewController.swift */; };
@@ -50,6 +49,7 @@
 		877AA9E81B677785006A017E /* SearchAccountResultTablViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9E71B677785006A017E /* SearchAccountResultTablViewController.swift */; };
 		877AA9EA1B6869D5006A017E /* SearchAccountResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9E91B6869D5006A017E /* SearchAccountResultTableViewCell.swift */; };
 		877AA9ED1B688408006A017E /* SearchStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9EC1B688408006A017E /* SearchStoreViewController.swift */; };
+		877AAAA31B69FC7E006A017E /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AAAA21B69FC7E006A017E /* AddMoneyViewController.swift */; };
 		87BE57391B61D21700F13039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE57381B61D21700F13039 /* AppDelegate.swift */; };
 		87BE573B1B61D21700F13039 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573A1B61D21700F13039 /* HomeViewController.swift */; };
 		87BE573D1B61D21700F13039 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573C1B61D21700F13039 /* SearchViewController.swift */; };
@@ -93,7 +93,6 @@
 		877AA9941B63FAFD006A017E /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHPickView.m; path = DKCircleButton/ZHPickView.m; sourceTree = "<group>"; };
 		877AA9971B64C165006A017E /* LabelLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelLabelView.swift; sourceTree = "<group>"; };
 		877AA9991B64D6E1006A017E /* LabelLabelBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelLabelBtnView.swift; sourceTree = "<group>"; };
-		877AA99D1B64DDAB006A017E /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMoneyViewController.swift; path = ../AddMoneyViewController.swift; sourceTree = "<group>"; };
 		877AA99F1B6519AF006A017E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		877AA9A11B652AEA006A017E /* SearchDealIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDealIdViewController.swift; sourceTree = "<group>"; };
 		877AA9AA1B65C8BA006A017E /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		877AA9E71B677785006A017E /* SearchAccountResultTablViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAccountResultTablViewController.swift; sourceTree = "<group>"; };
 		877AA9E91B6869D5006A017E /* SearchAccountResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAccountResultTableViewCell.swift; sourceTree = "<group>"; };
 		877AA9EC1B688408006A017E /* SearchStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStoreViewController.swift; sourceTree = "<group>"; };
+		877AAAA21B69FC7E006A017E /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		87BE57331B61D21700F13039 /* WBPone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBPone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BE57371B61D21700F13039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BE57381B61D21700F13039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				8713DB531B620D4D008BDEA3 /* MyViewController.swift */,
-				877AA99D1B64DDAB006A017E /* AddMoneyViewController.swift */,
+				877AAAA21B69FC7E006A017E /* AddMoneyViewController.swift */,
 			);
 			name = MyPage;
 			sourceTree = "<group>";
@@ -451,6 +451,7 @@
 				TargetAttributes = {
 					87BE57321B61D21700F13039 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 4657F63M2H;
 					};
 					87BE57491B61D21700F13039 = {
 						CreatedOnToolsVersion = 6.4;
@@ -507,7 +508,6 @@
 				877AA96B1B623574006A017E /* CustomerInfo.swift in Sources */,
 				87BE575C1B61D41000F13039 /* LoginViewController.swift in Sources */,
 				87BE575D1B61D41000F13039 /* RegisterViewController.swift in Sources */,
-				877AA99E1B64DDAB006A017E /* AddMoneyViewController.swift in Sources */,
 				877AA9A21B652AEA006A017E /* SearchDealIdViewController.swift in Sources */,
 				877AA96E1B623574006A017E /* UserInfo.swift in Sources */,
 				877AA9B51B663260006A017E /* XudangViewController.swift in Sources */,
@@ -533,6 +533,7 @@
 				877AA9821B63E1BD006A017E /* DealKeyValueView.swift in Sources */,
 				87BE573B1B61D21700F13039 /* HomeViewController.swift in Sources */,
 				877AA9DA1B671BD6006A017E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				877AAAA31B69FC7E006A017E /* AddMoneyViewController.swift in Sources */,
 				877AA9AF1B660549006A017E /* DealDetailViewController.swift in Sources */,
 				877AA9B31B663246006A017E /* ShudangViewController.swift in Sources */,
 				877AA9B71B66327A006A017E /* JuedangViewController.swift in Sources */,
@@ -670,6 +671,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBPone",
@@ -679,6 +682,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WBPone/WBPone-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -690,6 +694,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBPone",
@@ -699,6 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WBPone/WBPone-Bridging-Header.h";
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};

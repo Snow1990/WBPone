@@ -29,6 +29,8 @@ class AddMoneyViewController: UIViewController {
         user["balance"] = account.balance
         
         let uploadObjects = [user, account]
+        
+        
         PFObject.saveAllInBackground(uploadObjects) { (succeeded, error) -> Void in
             if succeeded {
                 let alert = UIAlertController(title: "Success", message: "保存成功", preferredStyle: UIAlertControllerStyle.Alert)
@@ -41,7 +43,7 @@ class AddMoneyViewController: UIViewController {
                 self.showErrorView(error!)
             }
         }
-          
+        
     }
     // MARK:- Init
     override func viewDidLoad() {
