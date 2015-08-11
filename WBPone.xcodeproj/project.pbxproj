@@ -18,6 +18,7 @@
 		8713DBA71B621776008BDEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE577F1B61DB5700F13039 /* SystemConfiguration.framework */; };
 		8713DBA81B62177F008BDEA3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE57811B61DB6300F13039 /* libz.dylib */; };
 		8713DBA91B621788008BDEA3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE57831B61DB7200F13039 /* libsqlite3.dylib */; };
+		8758DA881B798EF70031E5CE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8758DA871B798EF70031E5CE /* icon.png */; };
 		877AA9641B622861006A017E /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9631B622861006A017E /* DKCircleButton.m */; };
 		877AA96B1B623574006A017E /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9671B623574006A017E /* CustomerInfo.swift */; };
 		877AA96C1B623574006A017E /* DealInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9681B623574006A017E /* DealInfo.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		8713DB531B620D4D008BDEA3 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		8758DA871B798EF70031E5CE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		877AA9621B622861006A017E /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
 		877AA9631B622861006A017E /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
 		877AA9671B623574006A017E /* CustomerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		87BE57361B61D21700F13039 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8758DA871B798EF70031E5CE /* icon.png */,
 				87BE57411B61D21700F13039 /* Images.xcassets */,
 				87BE57431B61D21700F13039 /* LaunchScreen.xib */,
 				87BE57641B61D86D00F13039 /* WBPone-Bridging-Header.h */,
@@ -483,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8758DA881B798EF70031E5CE /* icon.png in Resources */,
 				87BE57401B61D21700F13039 /* Main.storyboard in Resources */,
 				87BE57451B61D21700F13039 /* LaunchScreen.xib in Resources */,
 				87BE57421B61D21700F13039 /* Images.xcassets in Resources */,

@@ -14,4 +14,6 @@ struct Constants {
     static let Scale = Rect.width/720
     
     static let backgroundColor = UIColor(red: 241/255, green: 248/255, blue: 240/255, alpha: 1)
+    
+    static let ChooseArray = ["金饰","手机","电脑","貂衣","车","其他"]
 }

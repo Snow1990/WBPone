@@ -11,7 +11,7 @@ import UIKit
 class TypeKeyValueView: UIView, ZHPickViewDelegate {
     
     // MARK:- Properties
-    let chooseArray = ["金饰","手机","电脑","貂衣","车","其他"]
+//    let chooseArray = ["金饰","手机","电脑","貂衣","车","其他"]
     override var frame: CGRect {
         didSet {
             self.resetContentFrame()
@@ -58,7 +58,7 @@ class TypeKeyValueView: UIView, ZHPickViewDelegate {
         typeValueBtn.addTarget(self, action: "typeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(typeValueBtn)
         
-        pickView = ZHPickView(pickviewWithArray: chooseArray, isHaveNavControler: false)
+        pickView = ZHPickView(pickviewWithArray: Constants.ChooseArray, isHaveNavControler: false)
         pickView.delegate = self
 
 

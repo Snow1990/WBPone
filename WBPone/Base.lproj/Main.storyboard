@@ -191,8 +191,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftr-c5-zgT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZj-gb-GOV">
+                                <rect key="frame" x="200" y="404" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HQ3-fg-jmv"/>
+                                    <constraint firstAttribute="width" constant="200" id="nQq-aF-E3w"/>
+                                </constraints>
+                                <state key="normal" title="其他库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="3Up-SC-ZKx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1l-WK-TtX">
+                                <rect key="frame" x="200" y="344" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KYl-Ub-a5W"/>
+                                    <constraint firstAttribute="width" constant="200" id="n2T-oO-pEU"/>
+                                </constraints>
+                                <state key="normal" title="车辆库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="wn6-HO-9bW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-lS-89a">
+                                <rect key="frame" x="200" y="284" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8Iq-bN-JgI"/>
+                                    <constraint firstAttribute="height" constant="30" id="nhJ-uz-X6X"/>
+                                </constraints>
+                                <state key="normal" title="貂衣库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="edU-an-dpA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY3-VD-gnm">
                                 <rect key="frame" x="200" y="224" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IgS-Sa-qaE"/>
+                                    <constraint firstAttribute="width" constant="200" id="NJX-Yy-maZ"/>
+                                </constraints>
+                                <state key="normal" title="手机库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="MjL-G3-ZyJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cZ-kp-wg7">
+                                <rect key="frame" x="200" y="164" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bdm-jM-3M6"/>
+                                    <constraint firstAttribute="width" constant="200" id="a31-QP-Ivh"/>
+                                </constraints>
+                                <state key="normal" title="电脑库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="dGb-FZ-fXw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUw-cj-8Qn">
+                                <rect key="frame" x="200" y="104" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="UTG-dh-Qqw"/>
+                                    <constraint firstAttribute="height" constant="30" id="wpx-Sd-rjr"/>
+                                </constraints>
+                                <state key="normal" title="金饰库存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CVa-Ka-kvP" kind="show" id="bXZ-Dm-nTf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftr-c5-zgT">
+                                <rect key="frame" x="200" y="464" width="200" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="be2-Hs-NgS"/>
@@ -206,28 +296,23 @@
                                     <segue destination="CVa-Ka-kvP" kind="show" id="ABe-UX-JXL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZj-gb-GOV">
-                                <rect key="frame" x="200" y="164" width="200" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.63772963029999996" blue="0.076289537480000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HQ3-fg-jmv"/>
-                                    <constraint firstAttribute="width" constant="200" id="nQq-aF-E3w"/>
-                                </constraints>
-                                <state key="normal" title="全部库存">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="CVa-Ka-kvP" kind="show" id="3Up-SC-ZKx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Ftr-c5-zgT" secondAttribute="centerX" id="4r2-Kw-XUd"/>
+                            <constraint firstItem="Y1l-WK-TtX" firstAttribute="top" secondItem="dzr-lS-89a" secondAttribute="bottom" constant="30" id="AAX-fb-UsU"/>
+                            <constraint firstAttribute="centerX" secondItem="XUw-cj-8Qn" secondAttribute="centerX" id="Fyq-Mr-yNh"/>
+                            <constraint firstAttribute="centerX" secondItem="sY3-VD-gnm" secondAttribute="centerX" id="ILx-JD-P2K"/>
+                            <constraint firstItem="VZj-gb-GOV" firstAttribute="top" secondItem="Y1l-WK-TtX" secondAttribute="bottom" constant="30" id="T9I-ac-Wrt"/>
+                            <constraint firstItem="sY3-VD-gnm" firstAttribute="top" secondItem="3cZ-kp-wg7" secondAttribute="bottom" constant="30" id="akx-1Z-fQT"/>
+                            <constraint firstAttribute="centerX" secondItem="dzr-lS-89a" secondAttribute="centerX" id="bPc-8l-DUj"/>
                             <constraint firstItem="Ftr-c5-zgT" firstAttribute="top" secondItem="VZj-gb-GOV" secondAttribute="bottom" constant="30" id="iXh-sR-Cti"/>
+                            <constraint firstAttribute="centerX" secondItem="Y1l-WK-TtX" secondAttribute="centerX" id="jAy-hS-qWO"/>
+                            <constraint firstItem="XUw-cj-8Qn" firstAttribute="top" secondItem="5X1-Bc-6IX" secondAttribute="bottom" constant="40" id="jLc-hJ-YUH"/>
+                            <constraint firstItem="3cZ-kp-wg7" firstAttribute="top" secondItem="XUw-cj-8Qn" secondAttribute="bottom" constant="30" id="koM-No-cHX"/>
                             <constraint firstAttribute="centerX" secondItem="VZj-gb-GOV" secondAttribute="centerX" id="uhQ-3G-o9b"/>
-                            <constraint firstItem="VZj-gb-GOV" firstAttribute="top" secondItem="5X1-Bc-6IX" secondAttribute="bottom" constant="100" id="utU-3W-2Pe"/>
+                            <constraint firstAttribute="centerX" secondItem="3cZ-kp-wg7" secondAttribute="centerX" id="vbZ-Dd-PJb"/>
+                            <constraint firstItem="dzr-lS-89a" firstAttribute="top" secondItem="sY3-VD-gnm" secondAttribute="bottom" constant="30" id="xrV-vL-IZ3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="库存表" id="MVv-lP-4p1"/>
@@ -720,7 +805,7 @@
         <image name="tab_icon3_normal" width="29" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ABe-UX-JXL"/>
         <segue reference="p8O-EA-DT9"/>
+        <segue reference="3Up-SC-ZKx"/>
     </inferredMetricsTieBreakers>
 </document>

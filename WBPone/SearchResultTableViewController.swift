@@ -22,7 +22,7 @@ class SearchResultTableViewController: PFQueryTableViewController {
     var telephone: String?
     var isDone: Bool?
     var isOutOfTime: Bool?
-
+    var goodsType: String?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -53,8 +53,16 @@ class SearchResultTableViewController: PFQueryTableViewController {
             }
         }
         
+        var innerGoodsQuery = GoodsInfo.query()!
+        if let goodsType = goodsType {
+            if goodsType != "" {
+                innerGoodsQuery.whereKey("type", equalTo: goodsType)
+            }
+        }
+        
         let query = DealInfo.query()!
         query.whereKey("customer", matchesQuery: innerQuery)
+        query.whereKey("goods", matchesQuery: innerGoodsQuery)
         
         if let dealId = dealId {
             if dealId != "" {
