@@ -20,6 +20,7 @@ class SearchResultTableViewController: PFQueryTableViewController {
     var name: String?
     var cardNo: String?
     var telephone: String?
+    var poneDate: String?
     var isDone: Bool?
     var isOutOfTime: Bool?
     var goodsType: String?
@@ -50,6 +51,21 @@ class SearchResultTableViewController: PFQueryTableViewController {
         if let telephone = telephone {
             if telephone != "" {
                 innerQuery.whereKey("telephone", equalTo: telephone)
+            }
+        }
+        if let poneDate = poneDate {
+            if poneDate != "" {
+                
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyyMMdd"
+                let startDate = dateFormatter.dateFromString(poneDate)!
+                let secondsPerDay: NSTimeInterval = 24*60*60
+                let endDate = NSDate(timeInterval: secondsPerDay, sinceDate: startDate)
+                
+                
+                innerQuery.whereKey("createdAt", greaterThanOrEqualTo: startDate)
+                innerQuery.whereKey("createdAt", lessThanOrEqualTo: endDate)
+                
             }
         }
         

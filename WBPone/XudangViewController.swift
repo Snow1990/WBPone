@@ -12,6 +12,7 @@ class XudangViewController: UIViewController {
     
     // MARK:- Properties
     let keys = ["凭证编号","续当金额"]
+    var dealId: Int?
 
     // MARK:- UI Elements
     var rootView = TPKeyboardAvoidingScrollView()
@@ -24,6 +25,10 @@ class XudangViewController: UIViewController {
         
         setupUIElements()
         resetContentFrame()
+        
+        if let dealId = dealId {
+            keyValueViewArr[0].value = toString(dealId)
+        }
     }
     
     func setupUIElements() {
@@ -128,7 +133,7 @@ class XudangViewController: UIViewController {
                                 
                                 let alert = UIAlertController(title: "Success", message: "保存成功", preferredStyle: UIAlertControllerStyle.Alert)
                                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
-                                    self.navigationController?.popViewControllerAnimated(true)
+                                    self.navigationController?.popToRootViewControllerAnimated(true)
                                 }))
                                 self.presentViewController(alert, animated: true, completion: nil)
                                 

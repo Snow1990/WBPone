@@ -11,6 +11,9 @@ import UIKit
 class DealDetailViewController: UIViewController {
     
     // MARK:- Properties
+    let ToShudangSegue = "ToShudangSegue"
+    let ToXudangSegue = "ToXudangSegue"
+    let ToJuedangSegue = "ToJuedangSegue"
     let keys = ["凭证编号","抵押价格","取回价格","利润","状态","姓名","身份证号","联系电话","当物名称","类型","数量","抵押时间(月)","每天利息","每月利息","备注","抵押日期"]
     var currentDeal: DealInfo!
     var currentDealInterestArr = [InterestInfo]() {
@@ -23,6 +26,9 @@ class DealDetailViewController: UIViewController {
     
     // MARK:- UI Elements
     var rootView = UIScrollView()
+    var xudangBtn = UIButton()
+    var shudangBtn = UIButton()
+    var juedangBtn = UIButton()
     var keyValueViewArr = [LabelLabelView]()
     var interestViewArr = [LabelLabelView]()
     // MARK:- Init
@@ -84,6 +90,24 @@ class DealDetailViewController: UIViewController {
         self.rootView.backgroundColor = Constants.backgroundColor
         self.view.addSubview(rootView)
 
+        xudangBtn.setTitle("续当", forState: UIControlState.Normal)
+        xudangBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        xudangBtn.backgroundColor = UIColor.orangeColor()
+        xudangBtn.addTarget(self, action: "xudangClick", forControlEvents: UIControlEvents.TouchUpInside)
+        self.rootView.addSubview(xudangBtn)
+        
+        shudangBtn.setTitle("赎当", forState: UIControlState.Normal)
+        shudangBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        shudangBtn.backgroundColor = UIColor.orangeColor()
+        shudangBtn.addTarget(self, action: "shudangClick", forControlEvents: UIControlEvents.TouchUpInside)
+        self.rootView.addSubview(shudangBtn)
+        
+        juedangBtn.setTitle("绝当", forState: UIControlState.Normal)
+        juedangBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        juedangBtn.backgroundColor = UIColor.orangeColor()
+        juedangBtn.addTarget(self, action: "juedangClick", forControlEvents: UIControlEvents.TouchUpInside)
+        self.rootView.addSubview(juedangBtn)
+        
         var values: [String] = [
             toString(currentDeal.dealId),
             toString(currentDeal.ponePrice),
@@ -116,10 +140,29 @@ class DealDetailViewController: UIViewController {
     // MARK: Update Frame
     func resetContentFrame() {
         
+        
+        xudangBtn.frame = CGRectMake(
+            5,
+            5,
+            90,
+            30)
+        
+        shudangBtn.frame = CGRectMake(
+            105,
+            5,
+            90,
+            30)
+        
+        juedangBtn.frame = CGRectMake(
+            205,
+            5,
+            90,
+            30)
+        
         for (index,keyValueView) in enumerate(keyValueViewArr) {
             keyValueView.frame = CGRectMake(
                 0,
-                35 * CGFloat(index),
+                xudangBtn.frame.maxY + 5 + 35 * CGFloat(index),
                 Constants.Rect.width,
                 35)
         }
@@ -188,14 +231,34 @@ class DealDetailViewController: UIViewController {
         
     }
     
-    /*
+    
+    func shudangClick() {
+        self.performSegueWithIdentifier(ToShudangSegue, sender: nil)
+    }
+    func xudangClick() {
+        self.performSegueWithIdentifier(ToXudangSegue, sender: nil)
+
+    }
+    func juedangClick() {
+        self.performSegueWithIdentifier(ToJuedangSegue, sender: nil)
+
+    }
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        
+        if let dest = segue.destinationViewController as? XudangViewController {
+            dest.dealId = self.currentDeal.dealId
+        }
+        if let dest = segue.destinationViewController as? ShudangViewController {
+            dest.dealId = self.currentDeal.dealId
+        }
+        if let dest = segue.destinationViewController as? JuedangViewController {
+            dest.dealId = self.currentDeal.dealId
+        }
     }
-    */
+    
     
 }

@@ -18,7 +18,6 @@
 		8713DBA71B621776008BDEA3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE577F1B61DB5700F13039 /* SystemConfiguration.framework */; };
 		8713DBA81B62177F008BDEA3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE57811B61DB6300F13039 /* libz.dylib */; };
 		8713DBA91B621788008BDEA3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BE57831B61DB7200F13039 /* libsqlite3.dylib */; };
-		8758DA881B798EF70031E5CE /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8758DA871B798EF70031E5CE /* icon.png */; };
 		877AA9641B622861006A017E /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9631B622861006A017E /* DKCircleButton.m */; };
 		877AA96B1B623574006A017E /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9671B623574006A017E /* CustomerInfo.swift */; };
 		877AA96C1B623574006A017E /* DealInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9681B623574006A017E /* DealInfo.swift */; };
@@ -51,6 +50,7 @@
 		877AA9EA1B6869D5006A017E /* SearchAccountResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9E91B6869D5006A017E /* SearchAccountResultTableViewCell.swift */; };
 		877AA9ED1B688408006A017E /* SearchStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AA9EC1B688408006A017E /* SearchStoreViewController.swift */; };
 		877AAAA31B69FC7E006A017E /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AAAA21B69FC7E006A017E /* AddMoneyViewController.swift */; };
+		87ACD7A31B81BA650034818A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 87ACD7A21B81BA650034818A /* icon.png */; };
 		87BE57391B61D21700F13039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE57381B61D21700F13039 /* AppDelegate.swift */; };
 		87BE573B1B61D21700F13039 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573A1B61D21700F13039 /* HomeViewController.swift */; };
 		87BE573D1B61D21700F13039 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BE573C1B61D21700F13039 /* SearchViewController.swift */; };
@@ -78,7 +78,6 @@
 
 /* Begin PBXFileReference section */
 		8713DB531B620D4D008BDEA3 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		8758DA871B798EF70031E5CE /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		877AA9621B622861006A017E /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
 		877AA9631B622861006A017E /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
 		877AA9671B623574006A017E /* CustomerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
@@ -117,6 +116,7 @@
 		877AA9E91B6869D5006A017E /* SearchAccountResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAccountResultTableViewCell.swift; sourceTree = "<group>"; };
 		877AA9EC1B688408006A017E /* SearchStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStoreViewController.swift; sourceTree = "<group>"; };
 		877AAAA21B69FC7E006A017E /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
+		87ACD7A21B81BA650034818A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		87BE57331B61D21700F13039 /* WBPone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBPone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BE57371B61D21700F13039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BE57381B61D21700F13039 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -349,7 +349,7 @@
 		87BE57361B61D21700F13039 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8758DA871B798EF70031E5CE /* icon.png */,
+				87ACD7A21B81BA650034818A /* icon.png */,
 				87BE57411B61D21700F13039 /* Images.xcassets */,
 				87BE57431B61D21700F13039 /* LaunchScreen.xib */,
 				87BE57641B61D86D00F13039 /* WBPone-Bridging-Header.h */,
@@ -486,7 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8758DA881B798EF70031E5CE /* icon.png in Resources */,
+				87ACD7A31B81BA650034818A /* icon.png in Resources */,
 				87BE57401B61D21700F13039 /* Main.storyboard in Resources */,
 				87BE57451B61D21700F13039 /* LaunchScreen.xib in Resources */,
 				87BE57421B61D21700F13039 /* Images.xcassets in Resources */,

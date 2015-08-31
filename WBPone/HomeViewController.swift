@@ -25,9 +25,8 @@ class HomeViewController: UIViewController {
         self.initTabBar()
 
         setupUIElements()
+        
         resetContentFrame()
-        
-        
     }
     
     func setupUIElements() {

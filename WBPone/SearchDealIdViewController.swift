@@ -11,7 +11,7 @@ import UIKit
 class SearchDealIdViewController: UIViewController{
     
     // MARK:- Properties
-    let keys = ["凭证序号","姓名","身份证号","联系电话"]
+    let keys = ["凭证序号","姓名","身份证号","联系电话","抵押日期"]
     let ToSearchResultSegue = "ToSearchResultSegue"
 //    var currentQuery: PFQuery?
 
@@ -80,6 +80,7 @@ class SearchDealIdViewController: UIViewController{
             dest.name = keyValueViewArr[1].value
             dest.cardNo = keyValueViewArr[2].value
             dest.telephone = keyValueViewArr[3].value
+            dest.poneDate = keyValueViewArr[4].value
         }
     }
     

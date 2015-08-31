@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1y-KD-imA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480" y="-393"/>
+            <point key="canvasLocation" x="2725" y="-393"/>
         </scene>
         <!--库存表-->
         <scene sceneID="vGC-Eq-tbR">
@@ -319,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJa-YC-Cwn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4308" y="-393"/>
+            <point key="canvasLocation" x="3480" y="-393"/>
         </scene>
         <!--我的-->
         <scene sceneID="Jcg-hL-MG3">
@@ -406,7 +406,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Mfi-kU-Oxb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-c6-J4N">
@@ -416,7 +416,7 @@
                                     <constraint firstAttribute="width" constant="80" id="oF1-01-uJm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -553,6 +553,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="详情" id="hGa-rX-t4o"/>
+                    <connections>
+                        <segue destination="bUn-jX-zER" kind="show" identifier="ToShudangSegue" id="u0D-ld-gjK"/>
+                        <segue destination="eX5-xp-hhn" kind="show" identifier="ToXudangSegue" id="b6O-XR-SBC"/>
+                        <segue destination="QtW-pM-1MW" kind="show" identifier="ToJuedangSegue" id="9vv-eA-2BV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZi-Nc-gu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -805,7 +810,10 @@
         <image name="tab_icon3_normal" width="29" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="p8O-EA-DT9"/>
+        <segue reference="9vv-eA-2BV"/>
         <segue reference="3Up-SC-ZKx"/>
+        <segue reference="p8O-EA-DT9"/>
+        <segue reference="u0D-ld-gjK"/>
+        <segue reference="b6O-XR-SBC"/>
     </inferredMetricsTieBreakers>
 </document>

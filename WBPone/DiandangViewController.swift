@@ -8,16 +8,17 @@
 
 import UIKit
 
-class DiandangViewController: UIViewController {
+class DiandangViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK:- Properties
-    let keys = ["姓名","身份证号","联系电话","当物名称","数量","价格","抵押时间(日)","每天利息","每月利息","备注"]
-    
+    let keys = ["身份证号","联系电话","当物名称","数量","价格","抵押时间(日)","每天利息","每月利息","备注"]
+
     // MARK:- UI Elements
     var rootView = TPKeyboardAvoidingScrollView()
     var dealKeyValueView = DealKeyValueView()
     var typeKeyValueView = TypeKeyValueView()
+    var nameKeyValueView = LabelTFView()
     var keyValueViewArr = [LabelTFView]()
     var doneBtn = UIButton.buttonWithType(UIButtonType.System) as! UIButton
     
@@ -39,17 +40,20 @@ class DiandangViewController: UIViewController {
         
         self.navigationItem.title = "典当"
         
-        dealKeyValueView.key = "凭证序号："
+        dealKeyValueView.key = "凭证序号:"
         dealKeyValueView.value = 0
         self.rootView.addSubview(dealKeyValueView)
         
-        typeKeyValueView.key = "类别："
+        typeKeyValueView.key = "类别:"
         self.rootView.addSubview(typeKeyValueView)
+        
+        nameKeyValueView.key = "姓名:"
+        nameKeyValueView.valueTextField.delegate = self
+        self.rootView.addSubview(nameKeyValueView)
         
         for key in keys {
             let keyValueView = LabelTFView()
             keyValueView.key = key + ":"
-//            keyValueView.valueTextField.delegate = self
             self.keyValueViewArr.append(keyValueView)
             self.rootView.addSubview(keyValueView)
         }
@@ -70,16 +74,23 @@ class DiandangViewController: UIViewController {
             0,
             Constants.Rect.width,
             35)
+        
         typeKeyValueView.frame  = CGRectMake(
             0,
             dealKeyValueView.frame.maxY,
+            Constants.Rect.width,
+            35)
+        
+        nameKeyValueView.frame  = CGRectMake(
+            0,
+            typeKeyValueView.frame.maxY,
             Constants.Rect.width,
             35)
 
         for (index,keyValueView) in enumerate(keyValueViewArr) {
             keyValueView.frame = CGRectMake(
                 0,
-                typeKeyValueView.frame.maxY + 35 * CGFloat(index),
+                nameKeyValueView.frame.maxY + 35 * CGFloat(index),
                 Constants.Rect.width,
                 35)
         }
@@ -104,17 +115,17 @@ class DiandangViewController: UIViewController {
         let account = Account()
         let user = UserInfo.currentUser()!
 
-        customer.name = keyValueViewArr[0].value
-        customer.cardNo = keyValueViewArr[1].value
-        customer.telephone = keyValueViewArr[2].value
+        customer.name = nameKeyValueView.value
+        customer.cardNo = keyValueViewArr[0].value
+        customer.telephone = keyValueViewArr[1].value
         uploadObjects.append(customer)
      
         goods.type = typeKeyValueView.value
-        goods.name = keyValueViewArr[3].value
-        if let value = keyValueViewArr[4].value {
+        goods.name = keyValueViewArr[2].value
+        if let value = keyValueViewArr[3].value {
             goods.count = NSString(string: value).doubleValue
         }
-        if let value = keyValueViewArr[5].value {
+        if let value = keyValueViewArr[4].value {
             deal.ponePrice = NSString(string: value).doubleValue
 
             let balance = user["balance"] as! Double
@@ -129,16 +140,16 @@ class DiandangViewController: UIViewController {
             uploadObjects.append(account)
 
         }
-        if let value = keyValueViewArr[6].value {
+        if let value = keyValueViewArr[5].value {
             goods.time = NSString(string: value).doubleValue
         }
-        if let value = keyValueViewArr[7].value {
+        if let value = keyValueViewArr[6].value {
             goods.interestPerDay = NSString(string: value).doubleValue
         }
-        if let value = keyValueViewArr[8].value {
+        if let value = keyValueViewArr[7].value {
             goods.interestPerMonth = NSString(string: value).doubleValue
         }
-        goods.remark = keyValueViewArr[9].value
+        goods.remark = keyValueViewArr[8].value
         uploadObjects.append(goods)
         
         deal.dealId = dealKeyValueView.value
@@ -157,7 +168,7 @@ class DiandangViewController: UIViewController {
 
                 let alert = UIAlertController(title: "Success", message: "保存成功", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
-                    self.navigationController?.popViewControllerAnimated(true)
+                    self.navigationController?.popToRootViewControllerAnimated(true)
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
                 
@@ -185,11 +196,45 @@ class DiandangViewController: UIViewController {
         }
         
     }
+    // 获取顾客身份证电话
+    func getCustomerCardNo(name: String) {
+        let query = CustomerInfo.query()!
+        query.whereKey("name", equalTo: name)
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects!.count) InterestInfo.")
+                
+                if let customerInfoArr = objects as? [CustomerInfo] {
+                    if !customerInfoArr.isEmpty {
+                        if let cardNo = customerInfoArr[0].cardNo {
+                            self.keyValueViewArr[0].value = cardNo
+                        }
+                        if let telephone = customerInfoArr[0].telephone {
+                            self.keyValueViewArr[1].value = telephone
+                        }
+                    }
+                }
+            }else {
+                // Log details of the failure
+                self.showErrorView(error!)
+            }
+        }
+        
+    }
     
-   
-    
-    
-   
+    // MARK: - Text Field Delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        getCustomerCardNo(textField.text)
+
+    }
     
    
     /*
