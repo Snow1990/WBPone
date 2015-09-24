@@ -69,6 +69,9 @@ class ShudangViewController: UIViewController {
     // 点击完成按钮
     func doneClick() {
         
+        doneBtn.enabled = false
+        doneBtn.setTitle("保存中...", forState: UIControlState.Normal)
+        
         if keyValueViewArr[0].value == nil
             || keyValueViewArr[1].value == nil {
                 return
@@ -132,6 +135,8 @@ class ShudangViewController: UIViewController {
                                 
                             } else {
                                 self.showErrorView(error!)
+                                self.doneBtn.setTitle("确定", forState: UIControlState.Normal)
+                                self.doneBtn.enabled = true
                             }
                         }
                         
@@ -141,6 +146,8 @@ class ShudangViewController: UIViewController {
             } else {
                 // Log details of the failure
                 self.showErrorView(error!)
+                self.doneBtn.setTitle("确定", forState: UIControlState.Normal)
+                self.doneBtn.enabled = true
             }
         }
         

@@ -105,6 +105,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
     
     // 点击完成按钮
     func doneClick() {
+        doneBtn.enabled = false
         doneBtn.setTitle("保存中...", forState: UIControlState.Normal)
 
         var uploadObjects = [AnyObject]()
@@ -174,6 +175,8 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
                 
             } else {
                 self.showErrorView(error!)
+                self.doneBtn.setTitle("确定", forState: UIControlState.Normal)
+                self.doneBtn.enabled = true
 
             }
         }
