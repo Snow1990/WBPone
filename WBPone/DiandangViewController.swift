@@ -20,7 +20,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
     var typeKeyValueView = TypeKeyValueView()
     var nameKeyValueView = LabelTFView()
     var keyValueViewArr = [LabelTFView]()
-    var doneBtn = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+    var doneBtn = UIButton(type: UIButtonType.System)
     
     // MARK:- Init
     override func viewDidLoad() {
@@ -71,7 +71,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         
         dealKeyValueView.frame = CGRectMake(
             0,
-            0,
+            64,
             Constants.Rect.width,
             35)
         
@@ -87,7 +87,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
             Constants.Rect.width,
             35)
 
-        for (index,keyValueView) in enumerate(keyValueViewArr) {
+        for (index,keyValueView) in keyValueViewArr.enumerate() {
             keyValueView.frame = CGRectMake(
                 0,
                 nameKeyValueView.frame.maxY + 35 * CGFloat(index),
@@ -187,7 +187,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         let query = DealInfo.query()!
         query.countObjectsInBackgroundWithBlock { (count, error) -> Void in
             if error == nil {
-                println("load seccess")
+                print("load seccess", terminator: "")
 
                 self.dealKeyValueView.value = Int(count)
                 self.doneBtn.enabled = true
@@ -209,7 +209,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
             
             if error == nil {
                 // The find succeeded.
-                println("Successfully retrieved \(objects!.count) InterestInfo.")
+                print("Successfully retrieved \(objects!.count) InterestInfo.", terminator: "")
                 
                 if let customerInfoArr = objects as? [CustomerInfo] {
                     if !customerInfoArr.isEmpty {
@@ -235,7 +235,11 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     func textFieldDidEndEditing(textField: UITextField) {
-        getCustomerCardNo(textField.text)
+        if let CustomerCardNo = textField.text {
+            getCustomerCardNo(CustomerCardNo)
+
+        }
+
 
     }
     

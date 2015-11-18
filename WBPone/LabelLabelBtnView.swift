@@ -38,7 +38,7 @@ class LabelLabelBtnView: UIView {
     // MARK:- UI Elements
     var keyLabel = UILabel()
     var valueLabel = UILabel()
-    var addBtn = UIButton.buttonWithType(UIButtonType.ContactAdd) as! UIButton
+    var addBtn = UIButton(type: UIButtonType.ContactAdd)
     
     // MARK:- Init
     override init(frame: CGRect) {
@@ -46,8 +46,8 @@ class LabelLabelBtnView: UIView {
         self.setupUIElements()
     }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setupUIElements() {

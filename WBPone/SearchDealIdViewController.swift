@@ -18,7 +18,7 @@ class SearchDealIdViewController: UIViewController{
     // MARK:- UI Elements
     var rootView = TPKeyboardAvoidingScrollView()
     var keyValueViewArr = [LabelTFView]()
-    var doneBtn = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+    var doneBtn = UIButton(type: UIButtonType.System)
 
     // MARK:- Init
     override func viewDidLoad() {
@@ -49,10 +49,10 @@ class SearchDealIdViewController: UIViewController{
     
     // MARK: Update Frame
     func resetContentFrame() {
-        for (index,keyValueView) in enumerate(keyValueViewArr) {
+        for (index,keyValueView) in keyValueViewArr.enumerate() {
             keyValueView.frame = CGRectMake(
                 0,
-                35 * CGFloat(index),
+                64 + 35 * CGFloat(index),
                 Constants.Rect.width,
                 35)
         }

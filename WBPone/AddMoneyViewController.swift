@@ -21,7 +21,9 @@ class AddMoneyViewController: UIViewController {
         let user = UserInfo.currentUser()!
         
         account.user = user
-        account.money = NSString(string: moneyTF.text).doubleValue
+        if let moneyText = moneyTF.text {
+            account.money = NSString(string: moneyText).doubleValue
+        }
         let balance = user["balance"] as! Double
         account.balance = balance + account.money
         account.remark = remarkTF.text

@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         //Check if user exists and logged in
         if let user = UserInfo.currentUser() {
             if user.isAuthenticated() {
-                println("user exists and logged in")
+                print("user exists and logged in", terminator: "")
                 self.performSegueWithIdentifier(tabViewMainSegue, sender: nil)
             }
         }
@@ -31,13 +31,23 @@ class LoginViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func logInPressed(sender: AnyObject) {
-        UserInfo.logInWithUsernameInBackground(userTextField.text, password: passwordTextField.text) { user, error in
-            if user != nil {
-                self.performSegueWithIdentifier(self.tabViewMainSegue, sender: nil)
-                println("logIn")
-            } else if let error = error {
-                self.showErrorView(error)
+        if let user = userTextField.text, password = passwordTextField.text {
+            UserInfo.logInWithUsernameInBackground(user, password: password) { user, error in
+                if user != nil {
+                    self.performSegueWithIdentifier(self.tabViewMainSegue, sender: nil)
+                    print("logIn", terminator: "")
+                } else if let error = error {
+                    self.showErrorView(error)
+                }
             }
         }
+//        UserInfo.logInWithUsernameInBackground(userTextField.text!, password: passwordTextField.text!) { user, error in
+//            if user != nil {
+//                self.performSegueWithIdentifier(self.tabViewMainSegue, sender: nil)
+//                print("logIn", terminator: "")
+//            } else if let error = error {
+//                self.showErrorView(error)
+//            }
+//        }
     }
 }

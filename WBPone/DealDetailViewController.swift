@@ -90,7 +90,7 @@ class DealDetailViewController: UIViewController {
         self.rootView.backgroundColor = Constants.backgroundColor
         self.view.addSubview(rootView)
 
-        xudangBtn.setTitle("续当", forState: UIControlState.Normal)
+        xudangBtn.setTitle("利息", forState: UIControlState.Normal)
         xudangBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         xudangBtn.backgroundColor = UIColor.orangeColor()
         xudangBtn.addTarget(self, action: "xudangClick", forControlEvents: UIControlEvents.TouchUpInside)
@@ -127,7 +127,7 @@ class DealDetailViewController: UIViewController {
             toString(currentDeal.createdAt),
         ]
         
-        for (index,key) in enumerate(keys) {
+        for (index,key) in keys.enumerate() {
             let keyValueView = LabelLabelView()
             keyValueView.key = key + ":"
             keyValueView.value = values[index]
@@ -143,23 +143,23 @@ class DealDetailViewController: UIViewController {
         
         xudangBtn.frame = CGRectMake(
             5,
-            5,
+            64 + 5,
             90,
             30)
         
         shudangBtn.frame = CGRectMake(
             105,
-            5,
+            64 + 5,
             90,
             30)
         
         juedangBtn.frame = CGRectMake(
             205,
-            5,
+            64 + 5,
             90,
             30)
         
-        for (index,keyValueView) in enumerate(keyValueViewArr) {
+        for (index,keyValueView) in keyValueViewArr.enumerate() {
             keyValueView.frame = CGRectMake(
                 0,
                 xudangBtn.frame.maxY + 5 + 35 * CGFloat(index),
@@ -169,7 +169,7 @@ class DealDetailViewController: UIViewController {
         var lastViewFrame = keyValueViewArr[keyValueViewArr.count - 1].frame
         rootView.contentSize.height = lastViewFrame.maxY
         
-        for (index,keyValueView) in enumerate(interestViewArr) {
+        for (index,keyValueView) in interestViewArr.enumerate() {
             keyValueView.frame = CGRectMake(
                 0,
                 lastViewFrame.maxY + 35 * CGFloat(index),
@@ -194,7 +194,7 @@ class DealDetailViewController: UIViewController {
             
             if error == nil {
                 // The find succeeded.
-                println("Successfully retrieved \(objects!.count) InterestInfo.")
+                print("Successfully retrieved \(objects!.count) InterestInfo.", terminator: "")
                 if let interestInfoArr = objects as? [InterestInfo] {
                     self.currentDealInterestArr = interestInfoArr
                 }

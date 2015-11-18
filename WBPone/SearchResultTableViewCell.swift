@@ -72,9 +72,11 @@ class SearchResultTableViewCell: PFTableViewCell {
         resetContentFrame()
     }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
     
     class func reuseIdentifier() -> String{
         return "SearchResultTableViewCell"

@@ -17,7 +17,7 @@ class XudangViewController: UIViewController {
     // MARK:- UI Elements
     var rootView = TPKeyboardAvoidingScrollView()
     var keyValueViewArr = [LabelTFView]()
-    var doneBtn = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+    var doneBtn = UIButton(type: UIButtonType.System)
     
     // MARK:- Init
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class XudangViewController: UIViewController {
         resetContentFrame()
         
         if let dealId = dealId {
-            keyValueViewArr[0].value = toString(dealId)
+            keyValueViewArr[0].value = String(dealId)
         }
     }
     
@@ -37,7 +37,7 @@ class XudangViewController: UIViewController {
         self.view.addSubview(rootView)
         
         for key in keys {
-            let keyValueView = LabelTFView()
+            let keyValueView = LabelTFView(frame: CGRectZero)
             keyValueView.key = key + ":"
             self.keyValueViewArr.append(keyValueView)
             self.rootView.addSubview(keyValueView)
@@ -52,10 +52,10 @@ class XudangViewController: UIViewController {
     
     // MARK: Update Frame
     func resetContentFrame() {
-        for (index,keyValueView) in enumerate(keyValueViewArr) {
+        for (index,keyValueView) in keyValueViewArr.enumerate() {
             keyValueView.frame = CGRectMake(
                 0,
-                35 * CGFloat(index),
+                64 + 35 * CGFloat(index),
                 Constants.Rect.width,
                 35)
         }
@@ -94,7 +94,7 @@ class XudangViewController: UIViewController {
             
             if error == nil {
                 // The find succeeded.
-                println("Successfully retrieved \(objects!.count) scores.")
+                print("Successfully retrieved \(objects!.count) scores.", terminator: "")
                 if objects!.count == 1 {
                     if let deal = objects![0] as? DealInfo {
                         

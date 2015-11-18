@@ -38,8 +38,8 @@ class DealKeyValueView: UIView {
         self.setupUIElements()
     }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setupUIElements() {

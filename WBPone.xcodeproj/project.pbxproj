@@ -449,12 +449,13 @@
 		87BE572B1B61D21700F13039 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Snow;
 				TargetAttributes = {
 					87BE57321B61D21700F13039 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 4657F63M2H;
+						DevelopmentTeam = 9WMM4ZY4BH;
 					};
 					87BE57491B61D21700F13039 = {
 						CreatedOnToolsVersion = 6.4;
@@ -608,6 +609,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -729,6 +731,7 @@
 				);
 				INFOPLIST_FILE = WBPoneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WBPone.app/WBPone";
 			};
@@ -744,6 +747,7 @@
 				);
 				INFOPLIST_FILE = WBPoneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WBPone.app/WBPone";
 			};

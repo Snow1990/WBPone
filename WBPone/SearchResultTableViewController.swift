@@ -37,7 +37,7 @@ class SearchResultTableViewController: PFQueryTableViewController {
     
     override func queryForTable() -> PFQuery {
         
-        var innerQuery = CustomerInfo.query()!
+        let innerQuery = CustomerInfo.query()!
         if let name = name {
             if name != "" {
                 innerQuery.whereKey("name", equalTo: name)
@@ -69,7 +69,7 @@ class SearchResultTableViewController: PFQueryTableViewController {
             }
         }
         
-        var innerGoodsQuery = GoodsInfo.query()!
+        let innerGoodsQuery = GoodsInfo.query()!
         if let goodsType = goodsType {
             if goodsType != "" {
                 innerGoodsQuery.whereKey("type", equalTo: goodsType)
@@ -92,7 +92,7 @@ class SearchResultTableViewController: PFQueryTableViewController {
             if isOutOfTime {
                 let dateNow = NSDate()
                 let secondsPerMonth: NSTimeInterval = 30*24*60*60
-                var lastMonthDate = dateNow.dateByAddingTimeInterval(-secondsPerMonth)
+                let lastMonthDate = dateNow.dateByAddingTimeInterval(-secondsPerMonth)
                 query.whereKey("updatedAt", lessThanOrEqualTo: lastMonthDate)
             }
         }

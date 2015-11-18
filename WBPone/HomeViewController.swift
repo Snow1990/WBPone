@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(shudangBtn)
         
         xudangBtn.titleLabel?.font = UIFont.systemFontOfSize(24)
-        xudangBtn.setTitle("续当", forState: UIControlState.Normal)
+        xudangBtn.setTitle("利息", forState: UIControlState.Normal)
         xudangBtn.addTarget(self, action: "xudangClicked", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(xudangBtn)
         

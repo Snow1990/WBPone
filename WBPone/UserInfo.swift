@@ -17,7 +17,7 @@ class UserInfo: PFUser{
     }
 }
 
-extension UserInfo: PFSubclassing {
+extension UserInfo {
 
     override class func initialize() {
         var onceToken: dispatch_once_t = 0

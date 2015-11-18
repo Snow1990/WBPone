@@ -31,7 +31,7 @@ class SearchAccountResultTablViewController: PFQueryTableViewController {
             let endDate = endDate {
                 query.whereKey("createdAt", greaterThanOrEqualTo: startDate)
                 let secondsPerDay: NSTimeInterval = 24*60*60
-                var nextEndDate = endDate.dateByAddingTimeInterval(secondsPerDay)
+                let nextEndDate = endDate.dateByAddingTimeInterval(secondsPerDay)
                 query.whereKey("createdAt", lessThanOrEqualTo: nextEndDate)
         }
         
