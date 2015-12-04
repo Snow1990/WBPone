@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let ToLoginViewSegue = "ToLoginViewSegue"
     let ToDiandangSegue = "ToDiandangSegue"
     let ToShudangSegue = "ToShudangSegue"
     let ToXudangSegue = "ToXudangSegue"

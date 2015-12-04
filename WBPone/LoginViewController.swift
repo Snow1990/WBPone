@@ -41,13 +41,6 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-//        UserInfo.logInWithUsernameInBackground(userTextField.text!, password: passwordTextField.text!) { user, error in
-//            if user != nil {
-//                self.performSegueWithIdentifier(self.tabViewMainSegue, sender: nil)
-//                print("logIn", terminator: "")
-//            } else if let error = error {
-//                self.showErrorView(error)
-//            }
-//        }
+
     }
 }
