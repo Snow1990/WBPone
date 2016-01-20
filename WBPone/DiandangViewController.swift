@@ -71,7 +71,7 @@ class DiandangViewController: UIViewController, UITextFieldDelegate {
         
         dealKeyValueView.frame = CGRectMake(
             0,
-            64,
+            0,
             Constants.Rect.width,
             35)
         

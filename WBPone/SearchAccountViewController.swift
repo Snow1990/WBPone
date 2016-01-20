@@ -51,7 +51,7 @@ class SearchAccountViewController: UIViewController {
         for (index,keyValueView) in keyValueViewArr.enumerate() {
             keyValueView.frame = CGRectMake(
                 0,
-                64 + 35 * CGFloat(index),
+                0 + 35 * CGFloat(index),
                 Constants.Rect.width,
                 35)
         }
